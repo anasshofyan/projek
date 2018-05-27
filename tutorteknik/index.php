@@ -126,7 +126,7 @@
      </div>
    </div>
  </section>
- <!-- jumbotron -->
+ <!-- carausell -->
  <section>
   <div class="container">
     <div class="row">
@@ -161,7 +161,7 @@
   </div>
 </div>
 </section>
-<!-- end jumbotron -->
+<!-- end carausell -->
 
 <!-- fitur tutorteknik -->
 <section>
