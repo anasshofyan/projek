@@ -21,8 +21,8 @@ if (isset($_POST["login"])) {
    }
  }
  echo '<script>
-     alert("Login Gagal");
-     window.location  = "../af-login.php"
+     alert("Login gagal");
+     window.location  = "../index.php"
      </script>';
 }
 ?>
