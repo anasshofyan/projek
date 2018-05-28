@@ -13,7 +13,6 @@ if (isset($_POST["login"])) {
     //cek password
     $row = mysqli_fetch_assoc($result);
     if(password_verify($password, $row["password"])){
-
      echo  '<script>
      alert("Login Berhasil");
      window.location  = "../af-login.php"
@@ -21,8 +20,9 @@ if (isset($_POST["login"])) {
      exit;
    }
  }
- echo  '<script>
-     window.location  = "../index.php?status=1";
+ echo '<script>
+     alert("Login Gagal");
+     window.location  = "../af-login.php"
      </script>';
 }
 ?>

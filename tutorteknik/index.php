@@ -111,23 +111,16 @@
 </div>
 <!-- End Modal Sign Up -->
 
-
 <section>
   <div class="container" style="margin-top: 70px;">
-    <div class="row mt-5 mb-3">
+    <div class="row mt-5 mb-2">
       <div class="col">
-          <!-- <?php 
-          $status = $_REQUEST['status'];
-          if ($status == 1) {
-            echo  '<div class="alert alert-danger" style="z-index:9999;" role="alert">
-           User dan Password anda salah!</div>
-           </div>';
-         }
-         ?> -->
+       
        </div>
      </div>
    </div>
  </section>
+
  <!-- carausell -->
  <section>
   <div class="container">
