@@ -4,8 +4,9 @@
   <?php include './config/config.php'; ?>
   <body>
     <!-- navbar -->
-    
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+     <div class="container">
       <a class="navbar-brand" href="#"><img src="./asset/img/logo.png" width="120" height="20" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,82 +39,83 @@
       <button data-toggle="modal" data-target="#modalLogin" href="#myModal" class="btn btn-outline-warning  mr-2">Login</button>
       <button data-toggle="modal" data-target="#modalSignup" href="#myModal" class="btn btn-danger  mr-4">Sign Up</button>
     </div>
-  </nav>
-  <!-- end navbar -->
+  </div>
+</nav>
+<!-- end navbar -->
 
 
-  <!-- Modal Login -->
-  <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Login Tutor Teknik Acount</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="POST" action="proses/login.php">
-            <div class="form-group">
-              <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-            </div>
-            <button type="submit" name="login" class="btn btn-warning btn-lg btn-block">Login</button>
-          </form>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <h6>Belum punya akun? daftar<a href="#modalSignup" data-target="#modalSignup" data-toggle="modal"> disini</a></h6>
-        </div>
+<!-- Modal Login -->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Login Tutor Teknik Acount</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="proses/login.php">
+          <div class="form-group">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+          </div>
+          <button type="submit" name="login" class="btn btn-warning btn-lg btn-block">Login</button>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <h6>Belum punya akun? daftar<a href="#modalSignup" data-target="#modalSignup" data-toggle="modal"> disini</a></h6>
       </div>
     </div>
   </div>
-  <!-- end modal login  -->
+</div>
+<!-- end modal login  -->
 
-  <!-- Modal Sing Up -->
-  <div class="modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Sign Up and Start Learning</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="POST" action="./proses/register.php">
-            <div class="form-group">
-              <input type="text" class="form-control" name="nama" placeholder="Enter Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="username" placeholder="Enter Username">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="email" placeholder="Enter Email">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" name="password" placeholder="Enter Password">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" name="password1" placeholder="Comfirm Password">
-            </div>
-            <button type="submit" name="register" class="btn btn-danger btn-lg btn-block">Sign Up</button>
-          </form>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <h6>Already have an account?<a href="#modalLogin" data-target="#modalLogin" data-toggle="modal"> Login</a></h6>
-        </div>
+<!-- Modal Sing Up -->
+<div class="modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Sign Up and Start Learning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="./proses/register.php">
+          <div class="form-group">
+            <input type="text" class="form-control" name="nama" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Enter Username">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="email" placeholder="Enter Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Enter Password">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password1" placeholder="Comfirm Password">
+          </div>
+          <button type="submit" name="register" class="btn btn-danger btn-lg btn-block">Sign Up</button>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <h6>Already have an account?<a href="#modalLogin" data-target="#modalLogin" data-toggle="modal"> Login</a></h6>
       </div>
     </div>
   </div>
-  <!-- End Modal Sign Up -->
+</div>
+<!-- End Modal Sign Up -->
 
-  
-  <section>
-    <div class="container" style="margin-top: 70px;">
-      <div class="row mt-5">
-        <div class="col">
+
+<section>
+  <div class="container" style="margin-top: 70px;">
+    <div class="row mt-5 mb-3">
+      <div class="col">
           <!-- <?php 
           $status = $_REQUEST['status'];
           if ($status == 1) {
@@ -168,41 +170,41 @@
   <div class="container">
     <div class="row text-center mb-3 mt-5">
       <div class="col-lg">
-        <h3>Apa yang bisa kamu lakukan di tutorteknik?</h3>
+        <h3>Apa yang bisa kamu lakukan di <strong>tutorteknik?</strong></h3>
         <p>Nggak perlu bingung dan repot lagi dalam mencari materi dan tutor terbaik.
         Semuanya telah tersedia di tutorteknik</p>
       </div>
     </div>
     <div class="row">
       <div class="col-lg">
-       <div class="card text-white bg-success mb-3">
+       <div class=" text-black mb-3">
         <div class="card-body text-center">
-          <span class="fa fa-comments fa-3x"></span>
-          <p class="card-text">Live chat dengan tutor</p>
+          <span class="fa fa-comments fa-3x" style="color: gold;"></span>
+          <p class="card-text mt-4">Live chat dengan tutor</p>
         </div>
       </div>
     </div>
     <div class="col-lg">
-     <div class="card text-white bg-primary mb-3">
+     <div class=" text-black mb-3">
       <div class="card-body text-center">
-        <span class="fa fa-user-plus fa-3x"></span>
-        <p class="card-text">Undang tutor</p>
+        <span class="fa fa-user-plus fa-3x" style="color: gold;"></span>
+        <p class="card-text mt-4">Undang tutor</p>
       </div>
     </div>
   </div>
   <div class="col-lg">
-   <div class="card text-white bg-warning mb-3">
+   <div class="text-black mb-3">
     <div class="card-body text-center">
-      <span class="fa fa-book fa-3x"></span>
-      <p class="card-text">Banyak pilihan materi</p>
+      <span class="fa fa-book fa-3x" style="color: gold;"></span>
+      <p class="card-text mt-4">Banyak pilihan materi</p>
     </div>
   </div>
 </div>
 <div class="col-lg">
- <div class="card text-white bg-danger mb-3">
+ <div class="text-black mb-3">
   <div class="card-body text-center">
-    <span class="fa fa-graduation-cap fa-3x"></span>
-    <p class="card-text">Praktek dengan tutor</p>
+    <span class="fa fa-graduation-cap fa-3x" style="color: gold;"></span>
+    <p class="card-text mt-4">Praktek dengan tutor</p>
   </div>
 </div>
 </div>
