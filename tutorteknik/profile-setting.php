@@ -40,7 +40,7 @@
                     <div class="card mb-4">
                       <div class="card-img-top text-center">
                         <div class="jumbotron">
-                          <i class="fa fa-user-circle-o fa-5x"></i>
+                          <i class="fa fa-user-circle-o fa-5x" style="color: #BBBBBB;"></i>
                         </div>
                         <p class="card-text pb-3">Your image should be at minimum 200x200 pixels and maximum 6000x6000 pixels.</p>
                       </div>
@@ -137,9 +137,10 @@
     </div>
   </div>
   <!-- end profile sstting -->
-
+ <div class="m-5"></div>
   <!-- Footer -->
-  <?php include './tag/tagtag/footer.php'; ?>
+  <?php
+   include './tag/tagtag/footer.php'; ?>
   <!-- end Footer -->
 
   <!-- Optional JavaScript -->

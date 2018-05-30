@@ -4,13 +4,13 @@ include './tag/tagtag/navbar.php';
 include './tag/tagtag/js.php';
 ?>
 
-<section class="container-fluid mt-3 bg-dark p-5">
+<section class="container-fluid bg-dark p-5">
 	<div class="container text-white">
 		<div class="row"><h3>Tutor Dashboard</h3></div>
 	</div>
 </section>
 
-<section class="container mt-4 shadow">
+<section class="container mt-4 ">
 	<div class="jumbotron">
 		<h1 class="display-4">Jadi Tutor </h1>
 		<hr class="my-4">

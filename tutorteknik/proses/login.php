@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require '../config/config.php';
 
 if (isset($_POST["login"])) {
@@ -13,16 +14,19 @@ if (isset($_POST["login"])) {
     //cek password
     $row = mysqli_fetch_assoc($result);
     if(password_verify($password, $row["password"])){
-     echo  '<script>
-     alert("Login Berhasil");
-     window.location  = "../af-login.php"
-     </script>';
-     exit;
+      $_SESSION['id_user'] = $row['id_user'];
+      if (isset($_SESSION['id_user'])) {
+       echo  '<script>
+       alert("Login Berhasil");
+       window.location  = "../af-login.php"
+       </script>';
+     }
+     
    }
  }
  echo '<script>
-     alert("Login gagal");
-     window.location  = "../index.php"
-     </script>';
+ alert("Login gagal");
+ window.location  = "../index.php"
+ </script>';
 }
 ?>

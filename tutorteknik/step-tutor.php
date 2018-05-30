@@ -17,7 +17,7 @@ include './tag/tagtag/js.php';
 
 <body >
 	<section>
-		<div class="container shadow pt-3 mt-4 mb-5">
+		<div class="container shadow pt-3 mt-4 mb-4">
 			<div class="row">
 				<div class="col-md">
 					<h3 class="text-center">Make Course</h3>
@@ -103,5 +103,5 @@ include './tag/tagtag/js.php';
 	</div>
 </section>
 
-
+<?php include './tag/tagtag/footer.php'; ?>
 

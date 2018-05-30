@@ -7,7 +7,7 @@
         <!-- end navbar -->
 
         <!-- my course -->
-        <footer class="bg-dark text-white mt-2">
+        <div class="bg-dark text-white mt-0">
           <div class="container">
             <div class="row pt-5">
               <h3>My Courses</h3>
@@ -24,7 +24,7 @@
 
             </div>
           </div>
-        </footer>
+        </div>
         <!-- end my course -->
 
         <!-- all course -->
