@@ -59,7 +59,7 @@
         <div class="row">
           <div class="col-md">
             <div class="card">
-              <a href="#">
+              <a href="products-details.php">
                 <img class="card-img-top" src="./uploads/1.png" alt="Card image cap">
               </a>
               <div class="card-body">

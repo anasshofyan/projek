@@ -15,9 +15,9 @@ if (isset($_POST["login"])) {
     $row = mysqli_fetch_assoc($result);
     if(password_verify($password, $row["password"])){
       //set sesion
-      $_SESION["login"] = true;
       echo '<script>
       alert("Login Berhasil");
+      window.location  = "../index.php"
       </script>';
     }
   }

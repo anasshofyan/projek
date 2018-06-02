@@ -35,7 +35,8 @@
              <button type="button" class="btn btn-light "><i class="fa fa-heart" style="color: #8D8D8D"></i>
              </button></a>
              <button type="button" class="btn btn-light"><i class="fa fa-bell" style="color: #8D8D8D"></i></button>
-             <button type="button" class="btn btn-light mr-3"><i class="fa fa-cart-plus" style="color: #8D8D8D"></i></button>
+             <a href="products-cart.php">
+             <button type="button" class="btn btn-light mr-3"><i class="fa fa-cart-plus" style="color: #8D8D8D"></i></button></a>
              <!-- drop profile -->
              <div class="dropdown show">
                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

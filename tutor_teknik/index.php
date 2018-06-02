@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,13 +31,9 @@
 
 
 	<?php 
-	session_start();
+	
+	include './components/navbar1.php';
 
-	if (!isset($_SESION["login"])) {
-		include './components/navbar1.php';
-	}else{
-		include './components/navbar.php';
-	}
 	?>
 
 

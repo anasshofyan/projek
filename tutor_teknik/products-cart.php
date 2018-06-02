@@ -29,43 +29,51 @@
 </head>
 <body>
 
-  <?php include './components/navbar.php' ?>
-  <!-- profile setting -->
-
-  <div class="container mt-5 mb-5">
-    <?php for ($i=1; $i <=3 ; $i++) : ?>
-      <div class="row mt-4">
-        <?php for ($j=1; $j <= 4; $j++) : ?>
-          <div class="col-md">
-            <div class="card">
-              <a href="#">
-                <img class="card-img-top" src="./uploads/1.png" alt="Card image cap">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
-                <p class="card-text">Anas Shofyan</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                </li>
-                <li class="list-group-item text-lg-right"><h6>Rp. 85.000</h6></li>
-              </ul>
-            </div>
-          </div>
-        <?php endfor; ?>
+  <?php include './components/navbar.php'; ?>
+  <!-- my products -->
+  <div class="bg-dark text-white mt-0">
+    <div class="container">
+      <div class="row p-5">
+        <h3>Products Cart</h3>
       </div>
-    <?php endfor; ?>
+    </div>
   </div>
-  <!-- end profile sstting -->
-  <div class="m-5"></div>
-  <!-- Footer -->
-  <?php
-  include './components/footer.php'; ?>
-  <!-- end Footer -->
+  <!-- end my products -->
+<section>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md">
+        <h4>1 Course in Chart</h4>
+      </div>
+    </div>
+  </div>
+</section>
+  <section>
+    <div class="container  mb-4">
+      <div class="row">
+        <div class="col-md-2">
+          <img class="card-img-top" src="uploads/1.png" alt="Card image cap">
+        </div>
+        <div class="col-md-6">
+          <h3>Belajar PHP untuk PEMULA : SESSION</h3>
+          <small>Anas Shofyan MF</small>
+        </div>
+        <div class="col-md-2">
+         <a href="">Remove</a>
+         <div></div>
+         <a href="">Move to Wishlist</a>
+        </div>
+        <div class="col-md-2">
+          <h4>Total</h4>
+          <h5>Rp. 200.000</h5>
+         <a href="check-out.php" class="btn btn-danger"> Check Out 
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section style="height: 200px;"></section>
+  <?php include './components/footer.php'; ?>
 </body>
 </html>
