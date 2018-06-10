@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top ">
  <div class="container">
-  <a class="navbar-brand" href="#"><img src="./asset/img/logo/logo.png" width="120" height="20" alt=""></a>
+  <a class="navbar-brand" href="index.php"><img src="./asset/img/logo/logo.png" width="120" height="20" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,9 +12,9 @@
           <i class="fa fa-th"></i> Kategori
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">Beginner</a></li>
-          <li><a class="dropdown-item" href="#">Intermediate</a></li>
-          <li><a class="dropdown-item" href="#">Advance</a></li>
+          <li><a class="dropdown-item" href="category.php?page=beginner">Beginner</a></li>
+             <li><a class="dropdown-item" href="category.php?page=intermediate">Intermediate</a></li>
+             <li><a class="dropdown-item" href="category.php?page=advance">Advance</a></li>
         </ul>
       </li>
       <form class="form-inline my-2 my-lg-0">

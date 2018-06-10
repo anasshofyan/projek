@@ -15,6 +15,8 @@ if (isset($_POST["login"])) {
     $row = mysqli_fetch_assoc($result);
     if(password_verify($password, $row["password"])){
       //set sesion
+      $_SESSION['login'] = true;
+      $_SESSION['uid'] = $row["id_user"];
       echo '<script>
       alert("Login Berhasil");
       window.location  = "../index.php"

@@ -1,3 +1,4 @@
+<?php include 'process/session.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-
+	<div style="margin-top: 80px;">
 	<?php include './components/navbar.php' ?>
 
 	<!-- profile setting -->
@@ -37,8 +38,16 @@
 			<div class="col-md-4">
 				<div class="card " style="width: 18rem;">
 					<img width="80%" class="m-4 rounded-circle img-thumbnail" src="./asset/img/icon/004-boy.svg" alt="Card image cap">
-					<h4 class="card-title text-center ml-3 mr-3"></h4>
-					<p class="card-text text-center">shofyananasmf@gmail.com</p>
+					<h4 class="card-title text-center ml-3 mr-3"> <?php
+						$id = $_SESSION['uid'];
+						echo mysqli_fetch_array(mysqli_query($conn, "SELECT nama FROM users WHERE id_user = '$id'"))[0];
+						?> </h4>
+					<p class="card-text text-center"> 
+						<?php
+						$id = $_SESSION['uid'];
+						echo mysqli_fetch_array(mysqli_query($conn, "SELECT email FROM users WHERE id_user = '$id'"))[0];
+						?>
+					</p>
 					<ul class="nav flex-column nav-pills text-center"  id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<li class="list-group-item">
 							<a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>

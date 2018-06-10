@@ -1,3 +1,4 @@
+<?php include 'process/session.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,52 +29,52 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <?php include './components/navbar.php'; ?>
-  <!-- my products -->
-  <div class="bg-dark text-white mt-0">
-    <div class="container">
-      <div class="row p-5">
-        <h3>Products Cart</h3>
+  <div style="margin-top: 60px;">
+    <?php include './components/navbar.php'; ?>
+    <!-- my products -->
+    <div class="bg-dark text-white mt-0">
+      <div class="container">
+        <div class="row p-5">
+          <h3>Products Cart</h3>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- end my products -->
-<section>
-  <div class="container mt-3">
-    <div class="row">
-      <div class="col-md">
-        <h4>1 Course in Chart</h4>
+    <!-- end my products -->
+    <section>
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-md">
+            <h4>1 Course in Chart</h4>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-  <section>
-    <div class="container  mb-4">
-      <div class="row">
-        <div class="col-md-2">
-          <img class="card-img-top" src="uploads/1.png" alt="Card image cap">
-        </div>
-        <div class="col-md-6">
-          <h3>Belajar PHP untuk PEMULA : SESSION</h3>
-          <small>Anas Shofyan MF</small>
-        </div>
-        <div class="col-md-2">
-         <a href="">Remove</a>
-         <div></div>
-         <a href="">Move to Wishlist</a>
-        </div>
-        <div class="col-md-2">
+    </section>
+    <section>
+      <div class="container  mb-4">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="card-img-top" src="uploads/1.png" alt="Card image cap">
+          </div>
+          <div class="col-md-6">
+            <h3>Belajar PHP untuk PEMULA : SESSION</h3>
+            <small>Anas Shofyan MF</small>
+          </div>
+          <div class="col-md-2">
+           <a href="">Remove</a>
+           <div></div>
+           <a href="">Move to Wishlist</a>
+         </div>
+         <div class="col-md-2">
           <h4>Total</h4>
           <h5>Rp. 200.000</h5>
-         <a href="check-out.php" class="btn btn-danger"> Check Out 
+          <a href="check-out.php" class="btn btn-danger"> Check Out 
           </a>
         </div>
       </div>
     </div>
   </section>
 
-<section style="height: 200px;"></section>
+  <section style="height: 200px;"></section>
   <?php include './components/footer.php'; ?>
 </body>
 </html>

@@ -13,3 +13,15 @@
 	border: 1px solid black;
 }
 
+.halo{
+	color: red;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+.color-grey{
+	color: #A8A8A8;
+}
+.color-grey:hover{
+	color: #848484;
+}

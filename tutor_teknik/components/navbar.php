@@ -1,7 +1,7 @@
- <!-- navbar -->
- <div class="navbar con navbar-expand-lg navbar-light bg-light shadow ">
+  <!-- navbar -->
+ <div class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
    <nav class="container ">
-    <a class="navbar-brand" href="#"><img src="./asset/img/logo/logo.png" width="120" height="20" alt=""></a>
+    <a class="navbar-brand" href="index.php"><img src="./asset/img/logo/logo.png" width="120" height="20" alt=""></a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
@@ -13,9 +13,9 @@
              <i class="fa fa-th"></i> Kategori
            </a>
            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-             <li><a class="dropdown-item" href="#">Beginner</a></li>
-             <li><a class="dropdown-item" href="#">Intermediate</a></li>
-             <li><a class="dropdown-item" href="#">Advance</a></li>
+             <li><a class="dropdown-item" href="category.php?page=beginner">Beginner</a></li>
+             <li><a class="dropdown-item" href="category.php?page=intermediate">Intermediate</a></li>
+             <li><a class="dropdown-item" href="category.php?page=advance">Advance</a></li>
            </ul>
          </li>
          <form class="form-inline my-2 my-lg-0">
@@ -43,11 +43,15 @@
                  <img src="./asset/img/icon/004-boy.svg" class="rounded-circle  profile img-fluid mr-3" width="30px">
                </a> 
                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                 <a class="dropdown-item" href="setting-profile.php"><i class="fa fa-user-circle" style="color: #8D8D8D"> </i> Anas Shofyan
+                 <a class="dropdown-item" href="profile-setting.php"><i class="fa fa-user-circle" style="color: #8D8D8D"> </i>
+                  <?php
+                    $id = $_SESSION['uid'];
+                    echo mysqli_fetch_array(mysqli_query($conn, "SELECT nama FROM users WHERE id_user = '$id'"))[0];
+                  ?>
                 </a>
                 <a class="dropdown-item" href="#"><i class="fa fa-commenting-o" style="color: #8D8D8D"> </i> Message</a>
-                <a class="dropdown-item" href="#"> <i class=" fa fa-question" style="color: #8D8D8D">  </i> Help</a>
-                <a class="dropdown-item" href="index.php"><i class="fa fa-sign-out"style="color: #8D8D8D">  </i> Log Out</a>
+                <a class="dropdown-item" href="help.php"> <i class=" fa fa-question" style="color: #8D8D8D">  </i> Help</a>
+                <a class="dropdown-item" href="process/logout.php"><i class="fa fa-sign-out"style="color: #8D8D8D">  </i> Log Out</a>
               </div>
             </div>
             <!-- end drop profile -->

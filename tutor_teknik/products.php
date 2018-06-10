@@ -1,3 +1,4 @@
+<?php include 'process/session.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-
+<div style="margin-top: 80px;">
   <?php include './components/navbar.php' ?>
   <!-- profile setting -->
 
@@ -37,7 +38,7 @@
       <div class="row mt-4">
         <?php for ($j=1; $j <= 4; $j++) : ?>
           <div class="col-md">
-            <div class="card">
+            <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top" src="./uploads/1.png" alt="Card image cap">
               </a>
