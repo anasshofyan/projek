@@ -210,8 +210,8 @@
 				</div>
 				<div class="row">
 					<?php for ($i=0; $i < 4 ; $i++) :
-				
-						 ?>
+
+						?>
 						<div class="col-md">
 							<?php for ($j=0; $j < 3 ; $j++) :?>
 								<div class="card mb-4">
@@ -220,80 +220,80 @@
 									</a>
 									<div class="card-body">
 										<h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
-										<p class="card-text">Anas Shofyan</p>
-										<div class="">
+										<footer>Anas Shofyan <cite title="Source Title">Source Title</cite></footer>			
+									</div>
+									<div class="list-group-item">
+										<div class="text-lg-right">
 											<span class="fa fa-star checked"></span>
 											<span class="fa fa-star checked"></span>
 											<span class="fa fa-star checked"></span>
 											<span class="fa fa-star checked"></span>
 											<span class="fa fa-star"></span>
 										</div>
+										<h6>Rp. 85.000</h6></div>
 									</div>
-									<div class="list-group-item text-lg-right"><h6>Rp. 85.000</h6></div>
-								</div>
-							<?php endfor; ?>
+								<?php endfor; ?>
+							</div>
+						<?php endfor; ?>
+					</div>
+				</div>
+			</section>
+
+			<!-- end category -->
+
+			<!-- location  -->
+
+			<section id="contact" class="contact mb-5">
+				<div class="container">
+					<div class="row pt-4 mb-4">
+						<div class="col text-center">
+							<h2>Contact Us</h2>
 						</div>
-					<?php endfor; ?>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-lg-4">
+							<div class="card text-white bg-primary mb-3">
+								<div class="card-body text-center">
+									<h5 class="card-title">Contact Us</h5>
+									<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, deleniti.</p>
+								</div>
+							</div>
+							<ul class="list-group">
+								<li class="list-group-item"><h1>Location</h1></li>
+								<li class="list-group-item">My Office</li>
+								<li class="list-group-item">Lamongan</li>
+								<li class="list-group-item">East Java</li>
+							</ul>
+						</div>
+
+						<div class="col-lg-6">
+							<form>
+								<div class="form-group">
+									<label for="nama">Nama</label>
+									<input type="text" class="form-control" id="nama" placeholder="Masukan Nama">
+								</div>
+								<div class="form-group">
+									<label for="email">Email</label>
+									<input type="text" class="form-control" id="email" placeholder="Masukan Email">
+								</div>
+								<div class="form-group">
+									<label for="telp">No Telp</label>
+									<input type="text" class="form-control" id="telp" placeholder="Masukan No telp">
+								</div>
+								<div class="form-group">
+									<label for="nama">Pesan</label>
+									<textarea type="text" class="form-control" id="nama" placeholder="Masukan Pesan"></textarea>
+								</div>
+								<div class="form-group">
+									<button class="btn btn-primary"> Kirim Pesan</button>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
-
-		<!-- end category -->
-
-		<!-- location  -->
-
-		<section id="contact" class="contact mb-5">
-			<div class="container">
-				<div class="row pt-4 mb-4">
-					<div class="col text-center">
-						<h2>Contact Us</h2>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-lg-4">
-						<div class="card text-white bg-primary mb-3">
-							<div class="card-body text-center">
-								<h5 class="card-title">Contact Us</h5>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, deleniti.</p>
-							</div>
-						</div>
-						<ul class="list-group">
-							<li class="list-group-item"><h1>Location</h1></li>
-							<li class="list-group-item">My Office</li>
-							<li class="list-group-item">Lamongan</li>
-							<li class="list-group-item">East Java</li>
-						</ul>
-					</div>
-
-					<div class="col-lg-6">
-						<form>
-							<div class="form-group">
-								<label for="nama">Nama</label>
-								<input type="text" class="form-control" id="nama" placeholder="Masukan Nama">
-							</div>
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input type="text" class="form-control" id="email" placeholder="Masukan Email">
-							</div>
-							<div class="form-group">
-								<label for="telp">No Telp</label>
-								<input type="text" class="form-control" id="telp" placeholder="Masukan No telp">
-							</div>
-							<div class="form-group">
-								<label for="nama">Pesan</label>
-								<textarea type="text" class="form-control" id="nama" placeholder="Masukan Pesan"></textarea>
-							</div>
-							<div class="form-group">
-								<button class="btn btn-primary"> Kirim Pesan</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end location  -->
-
-	<?php include './components/footer.php' ?>
-</body>
-</html>
+		<!-- end location  -->
+		<?php include './components/footer.php' ?>
+	</body>
+	</html>
