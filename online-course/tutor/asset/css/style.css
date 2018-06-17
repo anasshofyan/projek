@@ -1,0 +1,27 @@
+.checked {
+	color: orange;
+}
+.shadow{
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.margin{
+	margin-top: 50px;
+}
+
+.border-icon{
+	padding: 5px; 
+	border: 1px solid black;
+}
+
+.halo{
+	color: red;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+.color-grey{
+	color: #A8A8A8;
+}
+.color-grey:hover{
+	color: #848484;
+}
