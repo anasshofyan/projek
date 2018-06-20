@@ -5,9 +5,12 @@
     .line-top{
       border-top: 1px solid #D3D3D3;
     }
+    .bg{
+    background-color: white;
+  }
   </style>
 <!-- navbar -->
-<div class="navbar navbar-expand-lg navbar-light bg-light line-bottom fixed-top">
+<div class="navbar navbar-expand-lg navbar-light bg line-bottom fixed-top">
  <nav class="container-fluid">
   <a class="navbar-brand" href="index.php?page=home"><img src="./asset/img/logo/logo.png" width="160" height="25" class="mb-1"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

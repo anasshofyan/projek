@@ -1,56 +1,83 @@
 <?php include 'process/session.php'; ?>
-<style>
-	.fa-heart-q{
-		margin-left: 35px; font-size: 25px; color: #ec5252;
-	}
-	.fa-heart-q:hover{
-		color: #FFCC00;
-	}
-</style>
-<div style="margin-top: 100px"></div>
+<div style="margin-top: 63px"></div>
+<!-- banner dashboard -->
+<section>
+	<div class="carousel-item active">
+		<img class="d-block w-100 " src="./asset/img/11.jpg">
+		<div class="carousel-caption d-none d-md-block">
+			<div style="margin-bottom: 13%;">
+				<h1>All Levels Course</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end banner dashboard -->
+<!-- nav pills -->
+<div class="container-fluid">
+	<div class="row justify-content-center content-body-3 box-shadow">
+		<ul class="nav nav-pills " id="pills-tab" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link" id="pills-development-tab" data-toggle="pill" href="#pills-development" role="tab" aria-controls="pills-development" aria-selected="true">Development</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="pills-design-tab" data-toggle="pill" href="#pills-design" role="tab" aria-controls="pills-design" aria-selected="false">Design</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="pills-it-tab" data-toggle="pill" href="#pills-it" role="tab" aria-controls="pills-it" aria-selected="false">IT & Software</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="pills-electronic-tab" data-toggle="pill" href="#pills-electronic" role="tab" aria-controls="pills-electronic" aria-selected="false">Electronic</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="pills-micro-tab" data-toggle="pill" href="#pills-micro" role="tab" aria-controls="pills-micro" aria-selected="false">Micro Controller</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- end nav pills -->
+
+
 <!-- search -->
 <section>
 	<div class="container mt-5">
 		<div class="row  justify-content-center">
-			<form class="form-inline">
+			<form class="form-inline" method="get">
 				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-warning  my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
+				<button class="btn btn-outline-warning btn-lg  my-2 my-sm-0" type="submit" name="search"><span class="fa fa-search"></span></button>
 			</form>
 		</div>
 	</div>
 </section>
 <!-- end search -->
 <!-- product view -->
+
 <div class="container mt-5">
 	<div class="row">
-		<?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk") ?> 
+		<?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk ") ?> 
 		<?php while ($products = $result->fetch_assoc()) {?>
 			<div class="col-md-3">
-				<div class="card mb-4">
-					<a href="index.php?page=detail-products&id=<?= $products['id_produk']  ?> ">
-						<img class="card-img-top" src="tutor/uploads/<?= $products["foto_produk"]; ?> ">
-					</a>
-					<div class="card-body">
-						<h6 style="font-size: 13px" class="text-muted"><?= $products["kategori_produk"]; ?></h6>  
-						<h6 class="card-title"><?= $products["nama_produk"]; ?></h6>  
-						<div href="#" class="card-link"><strong>Rp. </strong><?= $angka = number_format($products["harga_produk"]) ; ?></div>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted" style="font-size: 12px;"><?= $products["level_produk"]; ?></small>
-						<small class="text-muted" style="font-size: 12px;"> &rarr;
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star checked"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</small>
-						<a href="index.php?page=wishlist&id=<?= $products['id_produk']  ?>">
+				<div class="mb-4 box-shadow">
+					<a class="product-btn-wishlist" href="add-wishlist.php?id=<?= $products['id_produk'] ; ?>">
 						<i class="fa fa-heart fa-heart-q mt-auto mb-auto" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"></i>
-						</a>
+					</a>
+					<a href="index.php?page=detail-products&id=<?= $products['id_produk'];  ?>">
+						<img class="product-img" src="tutor/uploads/<?= $products["foto_produk"]; ?> " >
+					</a>	
+					<div class="product-body">
+						<!-- category -->
+						<p class="product-category"><?= $products["kategori_produk"]; ?></p>
+						<!-- title product -->
+						<h6 class="product-title"><?= $products["nama_produk"]; ?></h6>
+						<!-- price -->
+						<div href="#" class="product-price"><strong>Rp. </strong><?= $angka = number_format($products["harga_produk"]); ?></div>
+						<!-- level -->
+						<small class="product-level" style="font-size: 12px;"><?php echo $products['nama_tutor_pembuat']; ?></small>
+						<!-- option button -->
 					</div>
 				</div>
 			</div>
 		<?php } ?>
-	</div>
+	</div>		
 </div>
 <!-- product view -->

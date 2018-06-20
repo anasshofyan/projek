@@ -1,40 +1,36 @@
 <?php include 'process/session.php'; ?>
-<style>
-.fa-heart-q{
-	margin-left: 52px; font-size: 25px; color: #ec5252;
-}
-.fa-heart-q:hover{
-	color: #FFCC00;
-}
-.position{
-	position: absolute;
-	top: 10px;
-	left: 160px;
-}
-</style>
-<div style="margin-top: 100px"></div>
+<div style="margin-top: 63px"></div>
+<section>
+	<div class="carousel-item active">
+		<img class="d-block w-100 " src="./asset/img/12.jpg">
+		<div class="carousel-caption d-none d-md-block">
+			<div style="margin-bottom: 13%;">
+				<h1>Beginner</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+			</div>
+		</div>
+	</div>
+</section>
 <!-- search -->
 <section>
 	<div class="container mt-5">
 		<div class="row  justify-content-center">
 			<form class="form-inline">
 				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-warning  my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
+				<button class="btn btn-outline-warning btn-lg my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
 			</form>
 		</div>
 	</div>
 </section>
 <!-- end search -->
 <!-- product view -->
-<?php $id_prodse = session_id(); ?>
-<?php $id_user = $_SESSION['uid'] ?>
 <div class="container mt-5">
 	<div class="row">
-		<?php $result = mysqli_query($conn, "SELECT * FROM tabel_wishlist , tabel_produk WHERE  tabel_wishlist.id_produk=tabel_produk.id_produk AND id_user='$id_user'"); ?> 
-		<?php while ($products = mysqli_fetch_assoc($result)){ ?>
+		<?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk WHERE level_produk='beginner'") ?> 
+		<?php while ($products = $result->fetch_assoc()) {?>
 			<div class="col-md-3">
 				<div class="mb-4 box-shadow">
-					<a class="product-btn-wishlist" href="delete-wishlist.php?id=<?= $products['id_produk'];  ?>">
+					<a class="product-btn-wishlist" href="add-wishlist.php?id=<?= $products['id_produk']  ?>">
 						<i class="fa fa-heart fa-heart-q mt-auto mb-auto" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"></i>
 					</a>
 					<a href="index.php?page=detail-products&id=<?= $products['id_produk'];  ?>">
@@ -48,7 +44,7 @@
 						<!-- price -->
 						<div href="#" class="product-price"><strong>Rp. </strong><?= $angka = number_format($products["harga_produk"]); ?></div>
 						<!-- level -->
-						<small class="product-level" style="font-size: 12px;"><?php echo $products['nama_tutor_pembuat']; ?></small>
+						<small class="product-level" style="font-size: 12px;"><?= $products["level_produk"]; ?></small>
 						<!-- option button -->
 					</div>
 				</div>
@@ -57,19 +53,3 @@
 	</div>
 </div>
 <!-- product view -->
-<?php if (isset($_GET['status'])){
-	if ($_GET['status']==1) {
-		echo '<div class="container">
-		<div class="row justify-content-center">
-		<div class="col-md">
-		<div class="content-body box-shadow text-center">
-		<div><span class=" mb-5 fa fa-gratipay fa-5x " style="color: #ec5252;">
-		</style></span></div>
-		<div><h5>No favorite course yet</h5></div>
-		</div>
-		</div>
-		</div>
-		</div>';
-	}
-} ?>		
-

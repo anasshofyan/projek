@@ -4,9 +4,12 @@
 .line{
 	border-bottom: 1px solid #D3D3D3;
 }
+.bg{
+    background-color: white;
+  }
 </style>
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top line">
+<nav class="navbar navbar-expand-lg navbar-light bg fixed-top line">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>

@@ -21,7 +21,7 @@
 				$row = mysqli_fetch_assoc($result);
 				if(password_verify($password, $row["password_user"])){
       			//set sesion 
-					$_SESSION['login'] = true;
+					$_SESSION['login_user'] = true;
 					$_SESSION['uid'] = $row["id_user"];
 					
 					echo "<div class='row justify-content-center'>

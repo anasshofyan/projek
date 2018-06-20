@@ -7,7 +7,7 @@
 			<div style="margin-bottom: 10%;">
 				<h1>Tutor Dashboard</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-				<a class="btn btn-outline-warning" href="index.php?page=make-course"><span class="fa fa-pencil-square margin-xs-right"></span> Make a Course</a>
+				<a class="btn btn-outline-warning" href="index.php?page=make-course"><span class="fa fa-pencil-square margin-xs-right"></span> Create a Course</a>
 			</div>
 		</div>
 	</div>
@@ -28,20 +28,28 @@
 <!-- products view  -->
 <div class="container mt-5">
   <div class="row">
-    <?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk") ?> 
+    <?php   $id_tutor = $_SESSION['tid']; ?>
+    <?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk WHERE id_tutor_fk='$id_tutor' ") ?> 
     <?php while ($products = $result->fetch_assoc()) {?>
       <div class="col-md-3">
-        <div class="card mb-4">
-          <img class="card-img-top" src="uploads/<?= $products["foto_produk"]; ?> ">
-          <div class="card-body">
-            <h6 style="font-size: 13px" class="text-muted"><?= $products["kategori_produk"]; ?></h6>  
-            <h6 class="card-title"><?= $products["nama_produk"]; ?></h6>  
-            <div href="#" class="card-link"><strong>Rp. </strong><?= $angka = number_format($products["harga_produk"]); ?></div>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted" style="font-size: 12px;"><?= $products["level_produk"]; ?></small>
-            <a href="index.php?page=delete-products&id=<?php echo $products["id_produk"];?>" class="btn btn-danger btn-sm ml-5"><span class="fa fa-trash"></span></a>
-            <a href="index.php?page=update-products&id=<?php echo $products["id_produk"]; ?>" class="btn btn-info btn-sm ml-2"><span class="fa fa-edit"></span></a>
+        <div class="mb-4 box-shadow">
+          <img class="product-img" src="uploads/<?= $products["foto_produk"]; ?> ">
+          <div class="product-body">
+            <!-- category -->
+            <p class="product-category"><?= $products["kategori_produk"]; ?></p>
+            <!-- title product -->
+            <h6 class="product-title"><?= $products["nama_produk"]; ?></h6>
+            <!-- price -->
+            <div href="#" class="product-price"><strong>Rp. </strong><?= $angka = number_format($products["harga_produk"]); ?></div>
+            <!-- level -->
+            <small class="product-level" style="font-size: 12px;"><?= $products["nama_tutor_pembuat"]; ?></small>
+            <!-- option button -->
+            <div class="product-btn">
+              <a href="index.php?page=delete-products&id=<?php echo $products["id_produk"];?>" class="btn btn-danger btn-sm ml-5"><span class="fa fa-trash"></span>
+              </a>
+              <a href="index.php?page=update-products&id=<?php echo $products["id_produk"]; ?>" class="btn btn-info btn-sm ml-2"><span class="fa fa-edit"></span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

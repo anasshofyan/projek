@@ -1,7 +1,7 @@
 <?php 
 require 'config/db.php';
 session_start();
-if(!isset($_SESSION['login']) || !$_SESSION['login']){
+if(!isset($_SESSION['login_user']) || !$_SESSION['login_user']){
 	include 'component/navbar1.php';
 }else{
 	include 'component/navbar.php';
@@ -28,7 +28,8 @@ if(!isset($_SESSION['login']) || !$_SESSION['login']){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-light">
+	
 	<div style="margin-top: 58px;"></div>
 	
 	<!-- link -->
@@ -36,10 +37,8 @@ if(!isset($_SESSION['login']) || !$_SESSION['login']){
 		// produk
 		if ($_GET['page']=="products") { 
 			include 'products.php';
-			// cart
 		}elseif ($_GET['page']=="cart") {
 			include 'cart.php';
-			// help
 		}elseif ($_GET['page']=="detail-products") {
 			include 'detail-products.php';
 		}elseif ($_GET['page']=="help") {
@@ -48,10 +47,6 @@ if(!isset($_SESSION['login']) || !$_SESSION['login']){
 			include 'tutor/teach-tutor.php';
 		}elseif ($_GET['page']=="my-course") {
 			include 'my-course.php';
-		}elseif ($_GET['page']=="delete-wishlist") {
-			include 'delete-wishlist.php';
-		}elseif ($_GET['page']=="wishlist") {
-			include 'wishlist.php';
 		}elseif ($_GET['page']=="login-user") {
 			include 'login-user.php';
 		}elseif ($_GET['page']=="register-user") {
@@ -60,14 +55,27 @@ if(!isset($_SESSION['login']) || !$_SESSION['login']){
 			include 'logout-user.php';
 		}elseif ($_GET['page']=="user-profile-setting") {
 			include 'user-profile-setting.php';
+		}elseif ($_GET['page']=="wishlist") {
+			include 'wishlist.php';
 		}elseif ($_GET['page']=="contact-us") {
 			include 'contact-us.php';
 		}elseif ($_GET['page']=="about") {
 			include 'about.php';
+		}elseif ($_GET['page']=="beginner") {
+			include 'beginner.php';
+		}elseif ($_GET['page']=="intermediate") {
+			include 'intermediate.php';
+		}elseif ($_GET['page']=="add-to-card") {
+			include 'add-to-card.php';
+		}elseif ($_GET['page']=="advance") {
+			include 'advance.php';
+		}elseif ($_GET['page']=="check-out") {
+			include 'check-out.php';
 		}else{
 			include 'home.php';
 		}
 	} ?>
+
 	<!-- end link -->
 	<div class="margin-bottom"></div>
 	<?php include './component/footer.php' ?>

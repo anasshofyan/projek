@@ -32,7 +32,7 @@
 </section>
 <!-- end carausell -->
 <!-- course -->
-<section>
+<section class="bg p-3">
 	<div class="container">
 		<div class="row m-5">
 			<div class="col-md text-center">
@@ -58,7 +58,7 @@
 	<div class="container mt-3 mb-3">
 		<div class="row">
 			<div class="col-md-3 mb-3">
-				<div class="card">
+				<div class="content-body-1 box-shadow">
 					<div class="card-body">
 						<h5>Buatlah  Tutorial yang Menarik</h5>
 						<p class="lead" style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repellat dolorum commodi non asperiores molestias.</p>
@@ -67,7 +67,7 @@
 				</div>
 			</div>
 			<div class="col-md-3 mb-3">
-				<div class="card">
+				<div class="content-body-1 box-shadow">
 					<div class="card-body">
 						<h5>Buatlah Video Singkat</h5>
 						<p class="lead" style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repellat dolorum commodi non asperiores molestias.</p>
@@ -76,7 +76,7 @@
 				</div>
 			</div>
 			<div class="col-md-3 mb-3">
-				<div class="card">
+				<div class="content-body-1 box-shadow">
 					<div class="card-body">
 						<h5>Bangun Audiensi yang Baik</h5>
 						<p class="lead" style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repellat dolorum commodi non asperiores molestias.</p>
@@ -85,7 +85,7 @@
 				</div>
 			</div>
 			<div class="col-md-3 mb-3">
-				<div class="card">
+				<div class="content-body-1 box-shadow">
 					<div class="card-body">
 						<h5>Bergabunglah dengan Tantangan Pendatang Baru</h5>
 						<p class="lead" style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repellat dolorum commodi non asperiores molestias.</p>
@@ -97,7 +97,7 @@
 	</div>
 </section>
 <section>
-	<div class="container-fluid bg-light card">
+	<div class="container-fluid content-body-2 box-shadow">
 		<div class="container p-5">
 			<div class="row">
 				<div class="col-md-8">

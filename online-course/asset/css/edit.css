@@ -1,3 +1,8 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*ICON BODY*/
 .ico-color{
 	color: #8F8F8F;"
 }
@@ -14,10 +19,143 @@
 	background-color: #9E9E9E;
 	color: #E9AF00;"
 }
-
+/*ICON BODY*/
+/*MARGIN*/
 .margin-top{
 	margin-top: 100px;
 }
 .margin-bottom{
 	margin-bottom: 50px;
 }
+/* END MARGIN*/
+
+/*LINE BOTTOM AND TOP NAVBAR */
+.line-bottom{
+	border-bottom: 1px solid #D3D3D3;
+}
+.line-top{
+	border-top: 1px solid #D3D3D3;
+}
+/*LINE BOTTOM AND TOP NAVBAR */
+
+.box-shadow{
+	box-shadow: 1px 1px 2px 0 rgba(0,0,0,.1);
+}
+
+/*CONTENT BODY*/
+.content-body{
+	padding: 30px;
+	font-size: 19px;
+	line-height: 36px;
+	color: #343434;
+	background-color: white;
+	border-radius: 0px;
+}
+.content-body-1{
+	padding: 5px;
+	font-size: 17px;
+	line-height: 25px;
+	color: #343434;
+	background-color: white;
+	border-radius: 0px;
+}
+.content-body-2{
+	padding: 10px;
+	font-size: 17px;
+	line-height: 25px;
+	color: #FFFFFF;
+	background-color: #2F2F2F;
+	border-radius: 0px;
+}
+.content-body-3{
+	padding: 10px;
+	font-size: 17px;
+	line-height: 25px;
+	color: #343434;
+	background-color: white;
+	border-radius: 0px;
+	
+}
+/* END CONTENT BODY*/
+
+/*PRODUCT CARD*/
+.product-img{
+	width: 100%;
+	border-top-left-radius: calc(.0rem - 1px);
+	border-top-right-radius: calc(.0rem - 1px);
+	display: block;
+	height: 23vh;
+	overflow: hidden;
+	position: relative;
+}
+.product-img-1{
+	width: 100%;
+	border-top-left-radius: calc(.0rem - 1px);
+	border-top-right-radius: calc(.0rem - 1px);
+	display: block;
+	height: 20vh;
+	float: left;
+
+}
+img{
+	vertical-align: middle;
+	border-style: none;
+}
+.product-body{
+	height: 200px;
+	position: relative;
+	padding: 20px;
+	background-color: white;
+}
+.product-body-1{
+	height: 100px;
+	position: relative;
+	padding: 20px;
+	background-color: white;
+}
+.product-category{
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #bfbfbf;;
+	letter-spacing: 1px;
+}
+.product-price{
+	position: absolute;
+	bottom: 45px;
+	font-size: 16px;
+	color: black;
+}
+.product-title{
+	font-size: 19px;
+	margin: 0;
+	margin-bottom: 10px;
+}
+.product-level{
+	position: absolute;
+	bottom: 23px;
+	left: : 20px;
+	font-size: 12px;
+	color: #bfbfbf;
+	letter-spacing: 1px;
+}
+.product-btn{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+.product-btn-wishlist{
+	position: absolute;
+	top: 10px;
+	right: 30px;
+	z-index: 9999;
+}
+/*hover btn wishlist*/
+.fa-heart-q{
+	margin-left: 30px; font-size: 25px; color: #ec5252;
+}
+.fa-heart-q:hover{
+	color: #FFCC00;
+}
+/* END PRODUCT CARD*/
+
+

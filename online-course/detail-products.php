@@ -28,7 +28,7 @@
 				<hr>
 				<p style="font-size: 18px;"><strong>Rp. </strong> <?= $angka = number_format($detail["harga_produk"]) ; ?></p>
 				<hr>
-				<a href="check-out.php?page=add-to-card&id=<?= $detail['id_produk']; ?>" class="btn btn-danger"> Add to Card	
+				<a href="add-to-card.php?id=<?= $detail['id_produk']; ?>" class="btn btn-danger"> Add to Card	
 				</a>
 				<a href="?page=add-to-card&id=<?= $detail['id_produk']; ?>" class="btn btn-info"> Buy Now	
 				</a>

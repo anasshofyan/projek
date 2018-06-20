@@ -1,14 +1,15 @@
 <?php include 'process/session.php'; ?>
 <?php $id = $_SESSION['tid'];?>
 <?php $pecah = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM tabel_tutor WHERE id_tutor='$id'" )); ?>
+
 <!-- profile setting -->
 <div style="margin-top: 80px;"></div>
 <div class="container mt-5">
 	<div class="row justify-content-center">
 		<div class="col-md-4 mb-3">
-			<div class="card ">
+			<div class="content-body box-shadow">
 				<img src="./uploads/<?= $pecah['foto_tutor'];
-				?>" class="rounded-circle mt-3 mr-auto ml-auto" width="190px"  alt="no image">
+				?>" class="rounded-circle m-5" width="190px"  alt="no image">
 				<h5 class="card-title text-center ml-3 mr-3 mt-3"> 
 					<?= $pecah['nama_depan_tutor'];  ?> <?= $pecah['nama_belakang_tutor'];  ?>
 				</h5>
@@ -18,7 +19,7 @@
 
 		<!-- form profile -->
 		<div class="col-md-8">
-			<div class="card">
+			<div class="content-body box-shadow">
 				<div class="card-body">
 					<form method="post" enctype="multipart/form-data">
 						<ul class="list-group list-group-flush">

@@ -5,10 +5,13 @@
 .line-top{
   border-top: 1px solid #D3D3D3;
 }
+.bg{
+    background-color: white;
+  }
 </style>
 <!-- Footer -->
 <footer>
-  <div class="line-top bg-light">
+  <div class="line-top bg">
     <div class="container pt-4" >
       <div class="row ">
         <div class="col-md ">

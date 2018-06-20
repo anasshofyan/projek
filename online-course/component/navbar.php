@@ -1,12 +1,28 @@
+<?php include 'process/session.php'; ?>
 <style>
 .line-bottom{
   border-bottom: 1px solid #D3D3D3;
 }
+.badge-a{
+  background-color: #ec5252;
+  color: white;
+}
+.bg{
+  background-color: white;
+}
 </style>
-<?php $id = $_SESSION['uid']; ?>
-<?php $pecah = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM table_user WHERE id_user = '$id'")); ?>
+
+<?php $id_user = $_SESSION['uid']; ?>
+<?php $pecah = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM table_user WHERE id_user = '$id_user'")); ?>
+<?php $result = mysqli_query($conn, "SELECT * FROM tabel_wishlist  JOIN tabel_produk WHERE  tabel_wishlist.id_produk=tabel_produk.id_produk AND id_user='$id_user'"); ?> 
+<?php $wishlist = mysqli_num_rows($result);?>
+
+<!-- // keranjang -->
+<?php $result = mysqli_query($conn, "SELECT * FROM tabel_keranjang JOIN tabel_produk WHERE  tabel_keranjang.id_produk=tabel_produk.id_produk AND id_user='$id_user'"); ?> 
+<?php $keranjang = mysqli_num_rows($result);?>
+
 <!-- navbar -->
-<div class="navbar navbar-expand-lg navbar-light bg-light line-bottom fixed-top">
+<div class="navbar navbar-expand-lg navbar-light bg line-bottom fixed-top" style="z-index:99999">
  <nav class="container">
   <a class="navbar-brand" href="index.php?page=home"><img src="./asset/img/logo/logo.png" width="160" height="25" class="mb-1"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,13 +50,13 @@
      <a class="nav-link" href="index.php?page=my-course">My Courses</a>
    </li>
    <li class="nav-item mr-2">
-     <a class="nav-link " data-toggle="tooltip" data-html="true" title="Wishlist" href="index.php?page=wishlist"><span class="fa fa-heart" style="color: #B2B2B2"></i></a>
+     <a class="nav-link " data-toggle="tooltip" data-html="true" title="Wishlist <?= $wishlist; ?> item" href="index.php?page=wishlist"><span class="fa fa-heart" style="color: #B2B2B2"></i><small class="badge badge-a badge-pill ml-1"><?= $wishlist; ?></small> </a>
      </li>
      <li class="nav-item mr-2">
-       <a class="nav-link" href="index.php?page=notification" data-html="true" title="Notification"><span class="fa fa-bell" style="color: #B2B2B2"></span></a>
+       <a class="nav-link" href="index.php?page=notification"><i class="fa fa-bell" style="color: #B2B2B2"></i></a>
      </li>
-     <li class="nav-item">
-       <a class="nav-link" href="index.php?page=cart" data-html="true" title="Card"><span class="fa fa-cart-plus" style="color: #B2B2B2"></span></a>
+     <li class="nav-item mr-2">
+       <a class="nav-link" href="index.php?page=cart" data-html="true" title="Card <?= $keranjang; ?> item"><i class="fa fa-cart-plus" style="color: #B2B2B2"></i><small class="badge badge-a ml-1 badge-pill"><?= $keranjang; ?></small></a>
      </li>
    </ul>
    <pre> </pre>
@@ -64,3 +80,6 @@
 </nav>
 </div>
 <!-- end navbar -->
+
+
+
