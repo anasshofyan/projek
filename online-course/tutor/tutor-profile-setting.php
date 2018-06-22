@@ -44,7 +44,7 @@
 								</div>
 								<div class="form-group">
 									<label for="">Photo</label>
-									<input type="file" class="form-control" name="foto">
+									<input type="file" class="form-control" name="image">
 								</div>
 								<div class="form-group">
 									<label for="">Bio</label>
@@ -128,48 +128,9 @@
 	</div>
 </div>
 </div>
-
-<!-- update profile -->
-
-<!-- end update profile -->
-
-<?php
-function cekDimensiMax($file_tmp){
-	$lebar_max       = 640;
-	$tinggi_max      = 640;
-	$lokasi_gambar   = $file_tmp;
-	$hasil           = 0;
-
-	$ukuran_asli = GetImageSize($file_tmp);
-
-	if ( $ukuran_asli[0] > $lebar_max and $ukuran_asli[1] > $tinggi_max ) {
-		$hasil = 1;
-	}
-
-	return $hasil;
-}
-
-function cekDimensiMin($file_tmp){
-	$lebar_min       = 340;
-	$tinggi_min      = 340;
-	$lokasi_gambar   = $file_tmp;
-	$hasil           = 0;
-
-	$ukuran_asli = GetImageSize($file_tmp);
-
-	if ( $ukuran_asli[0] < $lebar_min  and $ukuran_asli[1] < $tinggi_min ) {
-		$hasil = 1;
-	}
-
-	return $hasil;
-}
-?>
 <!-- update profile -->
 <?php 
 if (isset($_POST['save'])) {
-	$namafoto = $_FILES['foto']['name'];
-	$lokasifoto = $_FILES['foto']['tmp_name'];
-	$date = date('Y-m-d');
 	$errors = $_FILES['image']['error'];
 	$file_name = $_FILES['image']['name'];
 	$file_size = $_FILES['image']['size'];
@@ -177,25 +138,24 @@ if (isset($_POST['save'])) {
 	$file_type = $_FILES['image']['type'];
 	$file_ext = strtolower(end(explode('.',$_FILES['image']['name'])));
 	$expensions= array("jpeg","jpg","png");
-	$cekMax = cekDimensiMax($file_tmp);
-	$cekMin = cekDimensiMin($file_tmp);
-	
+	$lebar_max       = 640;
+	$tinggi_max      = 640;
+	$lokasi_gambar   = $file_tmp;
+	$ukuran_asli = GetImageSize($file_tmp);
+
 	if (!empty($file_tmp)) {
 		if ($errors === 0) {
 			if (in_array($file_ext,$expensions)== true) {
 				if ($file_size < 500000) {
-					if ($cekMax == 1) {
-						if ($cekMin == 1) {
-							move_uploaded_file($file_tmp, "./uploads/$file_name");
-							$result = mysqli_query($conn, "UPDATE tabel_tutor SET nama_depan_tutor='$_POST[Nama]', nama_belakang_tutor='$_POST[nama]', bio_tutor='$_POST[bio]', telepon_tutor='$_POST[kontak]', tl_tutor='$_POST[tl]', alamat_tutor='$_POST[alamat]', kota_tutor='$_POST[kota]', zip_tutor='$_POST[zip]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]', link_linkeid='$_POST[link_linkeid]', foto_tutor='$file_name', kecamatan_tutor='$_POST[kecamatan_tutor]' WHERE id_tutor='$id'");
-							echo "<script>alert('( Update Image ) Successfull Update Your Profile');</script>";
-							echo "<meta http-equiv='refresh' content='0'>";
-						}else{
-							echo "<script>alert('( Upload Image ) Minimum dimension 320x320');</script>";
-						}
+					if ( $ukuran_asli[0] != $lebar_max and $ukuran_asli[1] != $tinggi_max ) {
+						echo "<script>alert('your profile photo size should be 640x640 ');</script>";
 					}else{
-						echo "<script>alert('( Upload Image ) Maximal dimension 640x640');</script>";
+						move_uploaded_file($file_tmp, "./uploads/$file_name");
+						$result = mysqli_query($conn, "UPDATE tabel_tutor SET nama_depan_tutor='$_POST[Nama]', nama_belakang_tutor='$_POST[nama]', bio_tutor='$_POST[bio]', telepon_tutor='$_POST[kontak]', tl_tutor='$_POST[tl]', alamat_tutor='$_POST[alamat]', kota_tutor='$_POST[kota]', zip_tutor='$_POST[zip]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]', link_linkeid='$_POST[link_linkeid]', foto_tutor='$file_name', kecamatan_tutor='$_POST[kecamatan_tutor]' WHERE id_tutor='$id'");
+						echo "<script>alert('( Update Image ) Successfull Update Your Profile');</script>";
+						echo "<meta http-equiv='refresh' content='0'>";
 					}
+					
 				}else{
 					echo "<script>alert('( Upload Image ) File size must be excately 500 KB');</script>";
 				}

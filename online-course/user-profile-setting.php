@@ -43,7 +43,7 @@
 									</div>
 									<div class="form-group">
 										<label for="exampleFormControlTextarea1">Photo</label>
-										<input type="file" class="form-control" name="foto">
+										<input type="file" class="form-control" name="image">
 									</div>
 									<div class="form-group">
 										<label for="exampleFormControlTextarea1">Bio</label>
@@ -120,20 +120,47 @@
 </div>
 
 <!-- update profile user -->
+<!-- end update profile user -->
 <?php 
 if (isset($_POST['save'])) {
-	$namafoto = $_FILES['foto']['name'];
-	$lokasifoto = $_FILES['foto']['tmp_name'];
+	$errors = $_FILES['image']['error'];
+	$file_name = $_FILES['image']['name'];
+	$file_size = $_FILES['image']['size'];
+	$file_tmp = $_FILES['image']['tmp_name'];
+	$file_type = $_FILES['image']['type'];
+	$file_ext = strtolower(end(explode('.',$_FILES['image']['name'])));
+	$expensions= array("jpeg","jpg","png");
+	$lebar_max       = 640;
+	$tinggi_max      = 640;
+	$lokasi_gambar   = $file_tmp;
+	$ukuran_asli = GetImageSize($file_tmp);
 
-		// jika foto diubah
-	if (!empty($lokasifoto)) {
-		move_uploaded_file($lokasifoto, "./image/$namafoto");
-		$result = mysqli_query($conn, "UPDATE table_user SET nama_depan='$_POST[Nama]', nama_belakang='$_POST[nama]', bio_user='$_POST[bio]', telepon_user='$_POST[kontak]', tl_user='$_POST[tl]', alamat_user='$_POST[alamat]', kota_user='$_POST[kota]', negara_user='$_POST[negara]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]', foto_user='$namafoto' WHERE id_user='$id'");
+	if (!empty($file_tmp)) {
+		if ($errors === 0) {
+			if (in_array($file_ext,$expensions)== true) {
+				if ($file_size < 500000) {
+					if ( $ukuran_asli[0] != $lebar_max and $ukuran_asli[1] != $tinggi_max ) {
+						echo "<script>alert('your profile photo size should be 640x640 ');</script>";
+					}else{
+						move_uploaded_file($file_tmp, "./image/$file_name");
+						$result = mysqli_query($conn, "UPDATE table_user SET nama_depan='$_POST[Nama]', nama_belakang='$_POST[nama]', bio_user='$_POST[bio]', telepon_user='$_POST[kontak]', tl_user='$_POST[tl]', alamat_user='$_POST[alamat]', kota_user='$_POST[kota]', negara_user='$_POST[negara]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]', foto_user='$file_name' WHERE id_user='$id'");
+						echo "<script>alert('( Update Image ) Successfull Update Your Profile');</script>";
+						echo "<meta http-equiv='refresh' content='0'>";
+					}
+					
+				}else{
+					echo "<script>alert('( Upload Image ) File size must be excately 500 KB');</script>";
+				}
+			}else{
+				echo "<script>alert('( Upload Image ) Extension not allowed, please choose a JPEG or PNG file.');</script>";
+			}
+		}else{
+			echo "<script>alert('( Upload Image ) Image not empty);</script>";
+		}
 	}else{
 		$result = mysqli_query($conn, "UPDATE table_user SET nama_depan='$_POST[Nama]', nama_belakang='$_POST[nama]', bio_user='$_POST[bio]', telepon_user='$_POST[kontak]', tl_user='$_POST[tl]', alamat_user='$_POST[alamat]', kota_user='$_POST[kota]', negara_user='$_POST[negara]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]' WHERE id_user='$id'");
+		echo "<script>alert('( No Update Image ) Successfull Update Your Profile');</script>";
+		echo "<meta http-equiv='refresh' content='0'>";
 	}
-
-	echo "<meta http-equiv='refresh' content='0'>";
 }
 ?>
-<!-- end update profile user -->

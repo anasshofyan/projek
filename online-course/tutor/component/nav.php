@@ -25,7 +25,7 @@
 				<a class="nav-link" href="index.php?page=tutor-dashboard">Tutor Dashboard</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="http://anakteknik.co.id">Blog</a>
+				<a class="nav-link" href="http://anakteknik.co.id" target="blank">Blog</a>
 			</li>
 		</ul>
 		<ul class="navbar-nav mr-5">
