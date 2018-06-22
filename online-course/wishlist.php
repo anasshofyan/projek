@@ -18,8 +18,7 @@
 	<div class="container mt-5">
 		<div class="row  justify-content-center">
 			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-warning  my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
+				<input class="form-control mr-sm-2" type="search" id="keyword" placeholder="Search" aria-label="Search">
 			</form>
 		</div>
 	</div>
@@ -28,14 +27,14 @@
 <!-- product view -->
 <?php $id_prodse = session_id(); ?>
 <?php $id_user = $_SESSION['uid'] ?>
-<div class="container mt-5">
+<div class="container mt-5" id="container">
 	<div class="row">
 		<?php $result = mysqli_query($conn, "SELECT * FROM tabel_wishlist , tabel_produk WHERE  tabel_wishlist.id_produk=tabel_produk.id_produk AND id_user='$id_user'"); ?> 
 		<?php while ($products = mysqli_fetch_assoc($result)){ ?>
 			<div class="col-md-3">
 				<div class="mb-4 box-shadow">
-					<a class="product-btn-wishlist" href="delete-wishlist.php?id=<?= $products['id_produk'];  ?>">
-						<i class="fa fa-heart fa-heart-q mt-auto mb-auto" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"></i>
+					<a class="product-btn-wishlist" href="delete-wishlist.php?id=<?= $products['id_produk'];?>">
+						<i class="fa fa-heart fa-heart-q mt-auto mb-auto" data-toggle="tooltip" data-placement="bottom" title="Delete to Wishlist"></i>
 					</a>
 					<a href="index.php?page=detail-products&id=<?= $products['id_produk'];  ?>">
 						<img class="product-img" src="tutor/uploads/<?= $products["foto_produk"]; ?> " >

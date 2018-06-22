@@ -42,9 +42,8 @@
 <section>
 	<div class="container mt-5">
 		<div class="row  justify-content-center">
-			<form class="form-inline" method="get">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-warning btn-lg  my-2 my-sm-0" type="submit" name="search"><span class="fa fa-search"></span></button>
+			<form class="form-inline">
+				<input class="form-control mr-sm-2" type="search" id="keyword" placeholder="Search" aria-label="Search">
 			</form>
 		</div>
 	</div>
@@ -52,7 +51,7 @@
 <!-- end search -->
 <!-- product view -->
 
-<div class="container mt-5">
+<div class="container mt-5" id="container">
 	<div class="row">
 		<?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk ") ?> 
 		<?php while ($products = $result->fetch_assoc()) {?>

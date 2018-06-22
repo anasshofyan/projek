@@ -1,5 +1,5 @@
-<!-- contact us tutorteknik -->
-<section class="contact mb-5">
+<!-- contact us -->
+<section id="contact" class="contact mb-5">
 	<div class="container">
 		<div class="row pt-4 mb-4">
 			<div class="col text-center">
@@ -19,6 +19,18 @@
 					<li class="list-group-item">My Office</li>
 					<li class="list-group-item">Lamongan</li>
 					<li class="list-group-item">East Java</li>
+					<li class="list-group-item text-center bg-light">Social Media</li>
+					<li class="list-group-item text-center">
+						<a href="https://instagram.com/tutorteknik" class="mr-3">
+							<span class="fa fa-instagram fa-4x"></span>
+						</a>
+						<a href="https://facebook.com/tutorteknik" class="mr-3">
+							<span class="fa fa-facebook fa-4x"></span>
+						</a>
+						<a href="https://twitter.com/tutorteknik" class="mr-3">
+							<span class="fa fa-twitter fa-4x"></span>
+						</a>
+					</li>
 				</ul>
 			</div>
 
@@ -26,19 +38,19 @@
 				<form method="POST">
 					<div class="form-group">
 						<label for="nama">Nama</label>
-						<input type="text" class="form-control" name="nama" placeholder="Masukan Nama">
+						<input type="text" class="form-control" name="nama" placeholder="Masukan Nama" required="">
 					</div>
 					<div class="form-group">
 						<label for="email">Email</label>
-						<input type="text" class="form-control" name="email" placeholder="Masukan Email">
+						<input type="text" class="form-control" name="email" placeholder="Masukan Email"  required="">
 					</div>
 					<div class="form-group">
 						<label for="telp">No Telp</label>
-						<input type="number" class="form-control" name="notel" placeholder="Masukan No telp">
+						<input type="number" class="form-control" name="notel" placeholder="Masukan No telp"  required="">
 					</div>
 					<div class="form-group">
 						<label for="nama">Pesan</label>
-						<textarea type="text" class="form-control" name="pesan" placeholder="Masukan Pesan"></textarea>
+						<textarea type="text" class="form-control" name="pesan" placeholder="Masukan Pesan"  required=""></textarea>
 					</div>
 					<div class="form-group">
 						<button class="btn btn-warning" name="kirim"> Kirim Pesan</button>
@@ -48,14 +60,14 @@
 		</div>
 	</div>
 </section>
-<!-- contact us tutorteknik -->
+<!-- end contact us -->
 
-<!-- insert contact us -->
+<!-- insert to database -->
 <?php 
 if (isset($_POST['kirim'])) {
 	mysqli_query($conn, "INSERT INTO tabel_kontak_kami (nama_pengunjung, email_pengunjung, notel_pengunjung, pesan_pengunjung) VALUES('$_POST[nama]','$_POST[email]', '$_POST[notel]', '$_POST[pesan]')");
-	echo "<script>alert('Data telah dimasukkan ke database')</script>";
+	echo "<script>alert('Pesan telah terkirim ')</script>";
 	echo "<meta http-equiv='refresh' content='1'>";
 }
 ?>
-<!-- end insert contact us -->
+<!-- end insert to database -->

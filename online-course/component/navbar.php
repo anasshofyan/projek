@@ -80,6 +80,3 @@
 </nav>
 </div>
 <!-- end navbar -->
-
-
-

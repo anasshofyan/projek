@@ -1,5 +1,5 @@
 <!-- about tutor teknik -->
-<section style="margin-top: 200px;">
+<section style="margin-top: 180px;">
 	<div class="container">
 		<div class="row">
 			<div class="content-body box-shadow p-5">

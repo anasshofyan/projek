@@ -19,6 +19,18 @@
 					<li class="list-group-item">My Office</li>
 					<li class="list-group-item">Lamongan</li>
 					<li class="list-group-item">East Java</li>
+					<li class="list-group-item text-center bg-light">Social Media</li>
+					<li class="list-group-item text-center">
+						<a href="https://instagram.com/tutorteknik" class="mr-3">
+							<span class="fa fa-instagram fa-4x"></span>
+						</a>
+						<a href="https://facebook.com/tutorteknik" class="mr-3">
+							<span class="fa fa-facebook fa-4x"></span>
+						</a>
+						<a href="https://twitter.com/tutorteknik" class="mr-3">
+							<span class="fa fa-twitter fa-4x"></span>
+						</a>
+					</li>
 				</ul>
 			</div>
 

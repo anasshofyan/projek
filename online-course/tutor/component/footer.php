@@ -16,10 +16,9 @@
         </div>
         <div class="col-md">
           <a class="ico-color pr-3" href="index.php?page=about" style="font-size: 14px;">About</a>
-          <a class="ico-color pr-3" href="#" style="font-size: 14px;">Term & Condition</a>
           <a class="ico-color pr-3" href="index.php?page=contact-us" style="font-size: 14px;">Contact Us</a>
-          <a class="ico-color pr-3" href="#" style="font-size: 14px;">Stat</a>
-          <a class="ico-color pr-3" href="#" style="font-size: 14px;">Store</a>
+            <a class="ico-color pr-3" href="index.php?page=support" style="font-size: 14px;">Support</a>
+          <a class="ico-color pr-3" href="https://www.instagram.com/tutorteknikmarket" style="font-size: 14px;">Store</a>
         </div>
       </div>
     </div>

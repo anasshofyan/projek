@@ -31,56 +31,60 @@
 								<div class="row">
 									<div class="col-md">
 										<div class="form-group">
-											<label for="exampleFormControlTextarea1">First name</label>
+											<label for="">First name</label>
 											<input type="text" name="Nama" class="form-control"  placeholder="First name" value="<?= $pecah['nama_depan_tutor'];?>"  required="">
 										</div>
 									</div>
 									<div class="col-md">
 										<div class="form-group">
-											<label for="exampleFormControlTextarea1">Last name</label>
+											<label for="">Last name</label>
 											<input type="text" name="nama" class="form-control"  placeholder="Last name" value="<?= $pecah['nama_belakang_tutor'];?>"  required="">
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="exampleFormControlTextarea1">Photo</label>
+									<label for="">Photo</label>
 									<input type="file" class="form-control" name="foto">
 								</div>
 								<div class="form-group">
-									<label for="exampleFormControlTextarea1">Bio</label>
+									<label for="">Bio</label>
 									<textarea class="form-control" name="bio" rows="3"><?= $pecah['bio_tutor'];?></textarea>
 								</div>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="exampleFormControlTextarea1">TTL</label>
+											<label for="">TTL</label>
 											<input type="date" class="form-control" name="tl" 	value="<?= $pecah['tl_tutor'];?>">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="exampleFormControlTextarea1">Contact</label>
+											<label for="">Contact</label>
 											<input type="number" class="form-control" name="kontak" placeholder="Contact" value="<?= $pecah['telepon_tutor'];?>">
 										</div>
 									</div>
+								</div>
+								<div class="form-group">
+									<label for="">Address</label>
+									<input class="form-control" name="alamat" placeholder="Address" value="<?= $pecah['alamat_tutor'];?>">
 								</div>										
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-group">
-											<label for="exampleFormControlTextarea1">Address</label>
-											<input class="form-control" name="alamat" value="<?= $pecah['alamat_tutor'];?>">
+											<label for="">Districts</label>
+											<input class="form-control" name="kecamatan_tutor" placeholder="Districts" value="<?= $pecah['kecamatan_tutor'];?>">
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-4">
 										<div class="form-group">
-											<label for="exampleFormControlTextarea1">City</label>
+											<label for="">City</label>
 											<input type="text"  name="kota" class="form-control" placeholder="City" value="<?= $pecah['kota_tutor'];?>">
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-4">
 										<div class="form-group">
-											<label for="exampleFormControlTextarea1">Country</label>
-											<input type="text"  name="negara" class="form-control" placeholder="Country" value="<?= $pecah['negara_tutor'];?>">
+											<label for="">Zip Code</label>
+											<input type="text"  name="zip" class="form-control" placeholder="Zip Code" value="<?= $pecah['zip_tutor'];?>">
 										</div>
 									</div>
 								</li>
@@ -102,7 +106,7 @@
 										<div class="input-group-prepend">
 											<span class="input-group-text" id="basic-addon3">http://www.facebook.com/</span>
 										</div>
-										<input type="text" class="form-control"   name="link_facebook" aria-describedby="basic-addon3" value="<?= $pecah['link_facebook'];?>">
+										<input type="text" class="form-control"   name="link_facebook" aria-describedby="basic-addon3" value="http://www.facebook.com/<?= $pecah['link_facebook'];?>">
 									</div>
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">
@@ -126,19 +130,85 @@
 </div>
 
 <!-- update profile -->
+
+<!-- end update profile -->
+
+<?php
+function cekDimensiMax($file_tmp){
+	$lebar_max       = 640;
+	$tinggi_max      = 640;
+	$lokasi_gambar   = $file_tmp;
+	$hasil           = 0;
+
+	$ukuran_asli = GetImageSize($file_tmp);
+
+	if ( $ukuran_asli[0] > $lebar_max and $ukuran_asli[1] > $tinggi_max ) {
+		$hasil = 1;
+	}
+
+	return $hasil;
+}
+
+function cekDimensiMin($file_tmp){
+	$lebar_min       = 340;
+	$tinggi_min      = 340;
+	$lokasi_gambar   = $file_tmp;
+	$hasil           = 0;
+
+	$ukuran_asli = GetImageSize($file_tmp);
+
+	if ( $ukuran_asli[0] < $lebar_min  and $ukuran_asli[1] < $tinggi_min ) {
+		$hasil = 1;
+	}
+
+	return $hasil;
+}
+?>
+<!-- update profile -->
 <?php 
 if (isset($_POST['save'])) {
 	$namafoto = $_FILES['foto']['name'];
 	$lokasifoto = $_FILES['foto']['tmp_name'];
-
-		// jika foto diubah
-	if (!empty($lokasifoto)) {
-		move_uploaded_file($lokasifoto, "./uploads/$namafoto");
-		$result = mysqli_query($conn, "UPDATE tabel_tutor SET nama_depan_tutor='$_POST[Nama]', nama_belakang_tutor='$_POST[nama]', bio_tutor='$_POST[bio]', telepon_tutor='$_POST[kontak]', tl_tutor='$_POST[tl]', alamat_tutor='$_POST[alamat]', kota_tutor='$_POST[kota]', negara_tutor='$_POST[negara]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]', link_linkeid='$_POST[link_linkeid]', foto_tutor='$namafoto' WHERE id_tutor='$id'");
+	$date = date('Y-m-d');
+	$errors = $_FILES['image']['error'];
+	$file_name = $_FILES['image']['name'];
+	$file_size = $_FILES['image']['size'];
+	$file_tmp = $_FILES['image']['tmp_name'];
+	$file_type = $_FILES['image']['type'];
+	$file_ext = strtolower(end(explode('.',$_FILES['image']['name'])));
+	$expensions= array("jpeg","jpg","png");
+	$cekMax = cekDimensiMax($file_tmp);
+	$cekMin = cekDimensiMin($file_tmp);
+	
+	if (!empty($file_tmp)) {
+		if ($errors === 0) {
+			if (in_array($file_ext,$expensions)== true) {
+				if ($file_size < 500000) {
+					if ($cekMax == 1) {
+						if ($cekMin == 1) {
+							move_uploaded_file($file_tmp, "./uploads/$file_name");
+							$result = mysqli_query($conn, "UPDATE tabel_tutor SET nama_depan_tutor='$_POST[Nama]', nama_belakang_tutor='$_POST[nama]', bio_tutor='$_POST[bio]', telepon_tutor='$_POST[kontak]', tl_tutor='$_POST[tl]', alamat_tutor='$_POST[alamat]', kota_tutor='$_POST[kota]', zip_tutor='$_POST[zip]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]', link_linkeid='$_POST[link_linkeid]', foto_tutor='$file_name', kecamatan_tutor='$_POST[kecamatan_tutor]' WHERE id_tutor='$id'");
+							echo "<script>alert('( Update Image ) Successfull Update Your Profile');</script>";
+							echo "<meta http-equiv='refresh' content='0'>";
+						}else{
+							echo "<script>alert('( Upload Image ) Minimum dimension 320x320');</script>";
+						}
+					}else{
+						echo "<script>alert('( Upload Image ) Maximal dimension 640x640');</script>";
+					}
+				}else{
+					echo "<script>alert('( Upload Image ) File size must be excately 500 KB');</script>";
+				}
+			}else{
+				echo "<script>alert('( Upload Image ) Extension not allowed, please choose a JPEG or PNG file.');</script>";
+			}
+		}else{
+			echo "<script>alert('( Upload Image ) Image not empty);</script>";
+		}
 	}else{
-		$result = mysqli_query($conn, "UPDATE tabel_tutor SET nama_depan_tutor='$_POST[Nama]', nama_belakang_tutor='$_POST[nama]', bio_tutor='$_POST[bio]', telepon_tutor='$_POST[kontak]',tl_tutor='$_POST[tl]', alamat_tutor='$_POST[alamat]', kota_tutor='$_POST[kota]', negara_tutor='$_POST[negara]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]', link_linkeid='$_POST[link_linkeid]' WHERE id_tutor='$id'");
+		$result = mysqli_query($conn, "UPDATE tabel_tutor SET nama_depan_tutor='$_POST[Nama]', nama_belakang_tutor='$_POST[nama]', bio_tutor='$_POST[bio]', telepon_tutor='$_POST[kontak]',tl_tutor='$_POST[tl]', alamat_tutor='$_POST[alamat]', kota_tutor='$_POST[kota]', zip_tutor='$_POST[zip]', link_web='$_POST[link_web]', link_twitter='$_POST[link_twitter]', link_facebook='$_POST[link_facebook]', link_linkeid='$_POST[link_linkeid]',  kecamatan_tutor='$_POST[kecamatan_tutor]'  WHERE id_tutor='$id'");
+		echo "<script>alert('( No Update Image ) Successfull Update Your Profile');</script>";
+		echo "<meta http-equiv='refresh' content='0'>";
 	}
-	echo "<meta http-equiv='refresh' content='0'>";
 }
 ?>
-<!-- end update profile -->

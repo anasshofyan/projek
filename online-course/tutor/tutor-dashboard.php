@@ -13,20 +13,8 @@
 	</div>
 </section>
 <!-- end banner dashboard -->
-<!-- search -->
-<section>
-	<div class="container mt-5">
-		<div class="row  justify-content-center">
-			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-warning btn-lg my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
-			</form>
-		</div>
-	</div>
-</section>
-<!-- end search -->
 <!-- products view  -->
-<div class="container mt-5">
+<div class="container mt-5" id="container">
   <div class="row">
     <?php   $id_tutor = $_SESSION['tid']; ?>
     <?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk WHERE id_tutor_fk='$id_tutor' ") ?> 
@@ -36,19 +24,25 @@
           <img class="product-img" src="uploads/<?= $products["foto_produk"]; ?> ">
           <div class="product-body">
             <!-- category -->
-            <p class="product-category"><?= $products["kategori_produk"]; ?></p>
+            <p class="product-category"><?= $products["kategori_produk"]; ?> </p>
             <!-- title product -->
             <h6 class="product-title"><?= $products["nama_produk"]; ?></h6>
             <!-- price -->
             <div href="#" class="product-price"><strong>Rp. </strong><?= $angka = number_format($products["harga_produk"]); ?></div>
             <!-- level -->
             <small class="product-level" style="font-size: 12px;"><?= $products["nama_tutor_pembuat"]; ?></small>
+
             <!-- option button -->
             <div class="product-btn">
-              <a href="index.php?page=delete-products&id=<?php echo $products["id_produk"];?>" class="btn btn-danger btn-sm ml-5"><span class="fa fa-trash"></span>
-              </a>
-              <a href="index.php?page=update-products&id=<?php echo $products["id_produk"]; ?>" class="btn btn-info btn-sm ml-2"><span class="fa fa-edit"></span>
-              </a>
+
+              <div class="btn-group " role="group" aria-label="Basic example">
+                <a href="index.php?page=preview&id=<?php echo $products["id_produk"]; ?>" class="btn btn-info btn-sm " data-toggle="tooltip" data-html="true" title="Preview Your Course" ><span class="fa fa-eye"></span>
+                </a>
+                <a href="index.php?page=update-products&id=<?php echo $products["id_produk"]; ?>" class="btn btn-success btn-sm " data-toggle="tooltip" data-html="true" title="Update Your Course" ><span class="fa fa-edit"></span>
+                </a>
+                <a href="index.php?page=delete-products&id=<?php echo $products["id_produk"];?>" class="btn btn-danger btn-sm " data-toggle="tooltip" data-html="true" title="Remove Your Course" ><span class="fa fa-trash"></span></a>
+              </div>
+
             </div>
           </div>
         </div>
