@@ -47,7 +47,7 @@
       <a class="nav-link" href="tutor/index.php?page=teach-tutor">Teach on Tutorteknik</a>
     </li>
     <li class="nav-item mr-2">
-     <a class="nav-link" href="index.php?page=my-course">My Courses</a>
+     <a class="nav-link" href="index.php?page=checkout-nota">Transaction</a>
    </li>
    <li class="nav-item mr-2">
      <a class="nav-link " data-toggle="tooltip" data-html="true" title="Wishlist <?= $wishlist; ?> item" href="index.php?page=wishlist"><span class="fa fa-heart" style="color: #B2B2B2"></i><small class="badge badge-a badge-pill ml-1"><?= $wishlist; ?></small> </a>

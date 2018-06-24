@@ -53,7 +53,7 @@
 
 <div class="container mt-5" id="container">
 	<div class="row">
-		<?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk ") ?> 
+		<?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk, table_kategori, table_level WHERE tabel_produk.id_kategori=table_kategori.id_kategori AND tabel_produk.id_level=table_level.id_level ") ?> 
 		<?php while ($products = $result->fetch_assoc()) {?>
 			<div class="col-md-3">
 				<div class="mb-4 box-shadow">
@@ -65,7 +65,7 @@
 					</a>	
 					<div class="product-body">
 						<!-- category -->
-						<p class="product-category"><?= $products["kategori_produk"]; ?></p>
+						<p class="product-category"><?= $products["nama_level"]; ?> | <?= $products["nama_kategori"]; ?></p>
 						<!-- title product -->
 						<h6 class="product-title"><?= $products["nama_produk"]; ?></h6>
 						<!-- price -->

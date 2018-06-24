@@ -32,9 +32,9 @@
 								<small style="font-size: 12px;" class="text-muted">*pilih level</small>
 								<select class="form-control"  name="level" required="">
 									<option selected>Choose...</option>
-									<option value="Beginner">Beginner</option>
-									<option value="Intermediate">Intermediate</option>
-									<option value="Advance">Advance</option>
+									<option value="1">Beginner</option>
+									<option value="2">Intermediate</option>
+									<option value="3">Advance</option>
 								</select>
 							</div>
 						</div>
@@ -44,11 +44,10 @@
 								<small style="font-size: 12px;" class="text-muted">*pilih kategori</small>
 								<select class="form-control"  name="kategori" required="">
 									<option selected>Choose...</option>
-									<option value="Development">Development</option>
-									<option value="Design">Design</option>
-									<option value="IT & Software">IT & Software</option>
-									<option value="ELectronic">ELectronic</option>
-									<option value="Micro">Micro Controller</option>
+									<option value="1">Development</option>
+									<option value="2">Design</option>
+									<option value="3">IT & Software</option>
+									<option value="4">Electro</option>
 								</select>
 							</div>
 						</div>
@@ -123,7 +122,7 @@
 					}else{
 						echo "<script>alert('Successfull upload Course in Database');</script>";
 						move_uploaded_file($file_tmp,"./uploads/".$file_name);
-						mysqli_query($conn, "INSERT INTO tabel_produk (nama_produk, deskripsi_produk, level_produk, kategori_produk, foto_produk, harga_produk, link_video_iframe, rekruitmen_produk, pelajari_produk, id_tutor_fk, nama_tutor_pembuat, tanggal_pembuatan, sub_judul_produk) VALUES('$_POST[nama]','$_POST[deskripsi]', '$_POST[level]', '$_POST[kategori]', '$file_name', '$_POST[harga]', '$_POST[link]', '$_POST[rekruitmen]', '$_POST[pelajari]', '$id_tutor', '$nama_pembuat', '$date', '$_POST[sub_judul]')");
+						mysqli_query($conn, "INSERT INTO tabel_produk (nama_produk, deskripsi_produk, id_level, id_kategori, foto_produk, harga_produk, link_video_iframe, rekruitmen_produk, pelajari_produk, id_tutor_fk, nama_tutor_pembuat, tanggal_pembuatan, sub_judul_produk) VALUES('$_POST[nama]','$_POST[deskripsi]', '$_POST[level]', '$_POST[kategori]', '$file_name', '$_POST[harga]', '$_POST[link]', '$_POST[rekruitmen]', '$_POST[pelajari]', '$id_tutor', '$nama_pembuat', '$date', '$_POST[sub_judul]')");
 						echo "<meta http-equiv='refresh' content='1'>";
 					}
 				}else{

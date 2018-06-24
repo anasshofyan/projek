@@ -7,7 +7,7 @@
 			<div style="margin-bottom: 10%;">
 				<h1>Tutor Dashboard</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-				<a class="btn btn-outline-warning" href="index.php?page=make-course"><span class="fa fa-pencil-square margin-xs-right"></span> Create a Course</a>
+				<a class="btn btn-outline-warning" style="color: white;" href="index.php?page=make-course"><span class="fa fa-pencil-square margin-xs-right"></span> Create a Course</a>
 			</div>
 		</div>
 	</div>
@@ -17,14 +17,14 @@
 <div class="container mt-5" id="container">
   <div class="row">
     <?php   $id_tutor = $_SESSION['tid']; ?>
-    <?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk WHERE id_tutor_fk='$id_tutor' ") ?> 
+    <?php $result = mysqli_query($conn, "SELECT * FROM tabel_produk, table_kategori, table_level WHERE tabel_produk.id_kategori=table_kategori.id_kategori AND tabel_produk.id_level=table_level.id_level AND id_tutor_fk='$id_tutor' ") ?> 
     <?php while ($products = $result->fetch_assoc()) {?>
       <div class="col-md-3">
         <div class="mb-4 box-shadow">
           <img class="product-img" src="uploads/<?= $products["foto_produk"]; ?> ">
           <div class="product-body">
             <!-- category -->
-            <p class="product-category"><?= $products["kategori_produk"]; ?> </p>
+            <p class="product-category"><?= $products["nama_level"]; ?> | <?= $products["nama_kategori"]; ?> </p>
             <!-- title product -->
             <h6 class="product-title"><?= $products["nama_produk"]; ?></h6>
             <!-- price -->
@@ -51,3 +51,19 @@
   </div>
 </div>
 <!-- products view  -->
+<?php if (isset($_GET['status'])){
+  if ($_GET['status']==1) {
+    echo '<div class="container">
+    <div class="row justify-content-center">
+    <div class="col-md">
+    <div class="content-body box-shadow text-center">
+    <div>
+    <a class="btn" href="index.php?page=make-course"><span class=" mb-3 fa fa-plus-square fa-5x " style="color: #ec5252;"></span></a>
+    </div>
+    <div><h5>No Course Yet</h5></div>
+    </div>
+    </div>
+    </div>
+    </div>';
+  }
+} ?>    

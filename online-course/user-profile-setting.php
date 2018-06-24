@@ -43,6 +43,8 @@
 									</div>
 									<div class="form-group">
 										<label for="exampleFormControlTextarea1">Photo</label>
+										<small style="font-size: 12px;" class="text-muted">*upload foto profil dengan ukuran (500Kb) dan dimensi (640x640)</small>
+
 										<input type="file" class="form-control" name="image">
 									</div>
 									<div class="form-group">
@@ -82,7 +84,6 @@
 												<input type="text"  name="negara" class="form-control" placeholder="City" value="<?= $pecah['negara_user'];?>">
 											</div>
 										</div>
-
 									</div>
 								</li>
 								<li class="list-group-item">

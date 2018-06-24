@@ -25,15 +25,15 @@
 				</div>
 				<div class="col-md-3 ">
 					<div class="mr-5 mt-5 " style="position: absolute; right: 8px; width: 100%; z-index: 99;">
-						<div class="content-body-1 box-shadow bg-light">
+						<div class="content-body-3 box-shadow bg-warning">
 							<div class="embed-responsive embed-responsive-4by3">
 								<iframe class="embed-responsive-item" src="<?= $detail['link_video_iframe']; ?>"></iframe>
 							</div>
 							<div class=" content-body  ">
-								<h2 style="color: black;">Rp. <?= number_format($detail['harga_produk']); ?></h2>
+								<h3 style="color: black;">Rp. <small style="font-size: 30px;"><?= number_format($detail['harga_produk']); ?></small></h3>
 								<div class="mt-3">
-									<button class=" btn btn-danger btn-block btn-lg">Add to Card</button>
-									<button class=" btn btn-outline-warning btn-block btn-lg">Buy Now</button>
+									<button class=" btn btn-danger btn-block  btn-md">Add to Card</button>
+									<button class=" btn btn-outline-warning btn-block btn-md">Buy Now</button>
 								</div>
 								<hr>
 								<div class="text-center">
@@ -56,7 +56,7 @@
 	<div class="container-fluid m-5">
 		<div class="row">
 			<div class="col-md-8">
-				<div class="content-body box-shadow">
+				<div class="content-body-4 box-shadow">
 					<label for=""><h4>What Will I Learn?</h4></label>
 					<p class="text-justify"><?= $detail['pelajari_produk']; ?></p>
 				</div>
@@ -124,7 +124,7 @@
 	<div class="container-fluid m-5">
 		<div class="row">
 			<div class="col-md-8">
-				<div class="content-body box-shadow">
+				<div class="content-body-4 box-shadow">
 					<label for=""><h4>Requirements</h4></label>
 					<p class="text-justify"><?= $detail['rekruitmen_produk']; ?></p>
 				</div>
@@ -137,7 +137,7 @@
 	<div class="container-fluid m-5">
 		<div class="row">
 			<div class="col-md-8">
-				<div class="content-body box-shadow">
+				<div class="content-body-4 box-shadow">
 					<label for=""><h4>Description</h4></label>
 					<p class="text-justify"><?= $detail['deskripsi_produk']; ?></p>
 				</div>
@@ -147,21 +147,21 @@
 </section>
 
 <?php $details = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM tabel_tutor WHERE id_tutor='$_SESSION[tid]'"));?>
-<?php $detaill = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tabel_produk WHERE  id_tutor_fk='$_SESSION[tid]'"));?>
+<?php $detailss = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM tabel_produk WHERE  id_tutor_fk='$_SESSION[tid]'"));?>
 <section>
 	<div class="container-fluid m-5">
 		<div class="row">
 			<div class="col-md-8">
-				<div class="content-body box-shadow">
+				<div class="content-body-4 box-shadow">
 					<label for=""><h4>About the Tutor</h4></label>
 					<div class="row">
 						<div class="col-md-4">
 							<img src="./uploads/<?= $details['foto_tutor']; ?>" alt="" class="rounded-circle" width='180px'>
 							<div class="mt-3">
-								<p><i class="fa fa-play-circle mr-1"></i> 4.5 Average Rating</p>
-								<p><i class="fa fa-play-circle mr-1"></i> 1,206 Reviews</p>
-								<p><i class="fa fa-play-circle mr-1"></i> 12,229 Students</p>
-								<p><i class="fa fa-play-circle mr-1"></i><?= $detaill; ?> Courses</p>
+								<p><i class="fa fa-star mr-1"></i> 4.5 Average Rating</p>
+								<p><i class="fa fa-comment mr-1"></i> 1,206 Reviews</p>
+								<p><i class="fa fa-user-circle mr-1"></i> 12,229 Students</p>
+								<p><i class="fa fa-play-circle mr-1"></i> <?= $detailss;  ?> Courses</p>
 							</div>
 						</div>
 						<div class="col-md-8">
@@ -169,8 +169,6 @@
 							<p class="text-justify"><?= $details['bio_tutor']; ?></p>
 						</div>
 					</div>
-					
-					
 				</div>
 			</div>
 		</div>

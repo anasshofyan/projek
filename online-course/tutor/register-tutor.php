@@ -42,7 +42,6 @@
 				</div>
 				</div>		
 				</div>";
-				echo "<meta http-equiv='refresh' content='1'>";
 				return false;
 			}
 			// cek email 
@@ -56,7 +55,6 @@
 				</div>
 				</div>		
 				</div>";
-				echo "<meta http-equiv='refresh' content='1'>";
 				return false;
 			}
     //cek password
@@ -68,7 +66,6 @@
 				</div>
 				</div>		
 				</div>";
-				echo "<meta http-equiv='refresh' content='1'>";
 				return false;
 			}
 

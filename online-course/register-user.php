@@ -42,7 +42,19 @@
 				</div>
 				</div>		
 				</div>";
-				echo "<meta http-equiv='refresh' content='1'>";
+				return false;
+			}
+			// cek email 
+			$hasil = mysqli_query($conn, "SELECT email_user FROM table_user WHERE email_user = '$email'");
+
+			if (mysqli_fetch_assoc($hasil)) {
+				echo "<div class='row justify-content-center'>
+				<div class='col-md-4'>
+				<div class='alert alert-danger'><p style='font-size: 14px;'>
+				Email telah digunakan </p>
+				</div>
+				</div>		
+				</div>";
 				return false;
 			}
     //cek password
@@ -54,7 +66,6 @@
 				</div>
 				</div>		
 				</div>";
-				echo "<meta http-equiv='refresh' content='1'>";
 				return false;
 			}
 

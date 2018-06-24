@@ -1,6 +1,6 @@
 <?php include 'process/session.php'; ?>
 <!-- memanggil data tabel produk -->
-<?php $edit = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM tabel_produk WHERE id_produk='$_GET[id]'"));?>
+<?php $edit = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM  tabel_produk WHERE  id_produk='$_GET[id]'"));?>
 <div style="margin-top: 60px;"></div>
 <!-- form update products -->
 <section>
@@ -36,10 +36,10 @@
 								<label for="title">Level</label>
 								<small style="font-size: 12px;" class="text-muted">*pilih level</small>
 								<select class="form-control"  name="level">
-									<option selected><?= $edit['level_produk']; ?></option>
-									<option value="Beginner">Beginner</option>
-									<option value="Intermediate">Intermediate</option>
-									<option value="Advance">Advance</option>
+									<option><?= $edit['id_level']; ?></option>
+									<option value="1">Beginner</option>
+									<option value="2">Intermediate</option>
+									<option value="3">Advance</option>
 								</select>
 							</div>
 						</div>
@@ -48,12 +48,11 @@
 								<label for="title">Category</label>
 								<small style="font-size: 12px;" class="text-muted">*pilih kategori</small>
 								<select class="form-control"  name="kategori">
-									<option selected><?= $edit['kategori_produk']; ?></option>
-									<option value="Development">Development</option>
-									<option value="Design">Design</option>
-									<option value="IT & Software">IT & Software</option>
-									<option value="ELectronic">ELectronic</option>
-									<option value="Micro">Micro Controller</option>
+									<option ><?= $edit['id_kategori']; ?></option>
+									<option value="1">Development</option>
+									<option value="2">Design</option>
+									<option value="3">IT & Software</option>
+									<option value="4">Electro</option>
 								</select>
 							</div>
 						</div>
@@ -120,8 +119,6 @@ if (isset($_POST['update'])) {
 	$tinggi_max      = 506;
 	$lokasi_gambar   = $file_tmp;
 	$ukuran_asli = GetImageSize($file_tmp);
-
-
 	if (!empty($file_tmp)) {
 		if ($errors === 0) {
 			if (in_array($file_ext,$expensions)== true) {
@@ -144,10 +141,9 @@ if (isset($_POST['update'])) {
 			echo "<script>alert('( Upload Image ) Image not empty);</script>";
 		}
 	}else{
-		$result = mysqli_query($conn, "UPDATE tabel_produk SET nama_produk='$_POST[nama]', deskripsi_produk='$_POST[deskripsi]',level_produk='$_POST[level]', kategori_produk='$_POST[kategori]', harga_produk='$_POST[harga]', link_video_iframe='$_POST[link]', rekruitmen_produk='$_POST[rekruitmen]', pelajari_produk='$_POST[pejalari]', id_tutor_fk='$id_tutor', nama_tutor_pembuat='$nama_pembuat', tanggal_pembuatan='$date', sub_judul_produk='$_POST[sub_judul]' WHERE id_produk='$_GET[id]'");
+		$result = mysqli_query($conn, "UPDATE tabel_produk SET nama_produk='$_POST[nama]', deskripsi_produk='$_POST[deskripsi]',id_level='$_POST[level]', id_kategori='$_POST[kategori]', harga_produk='$_POST[harga]', link_video_iframe='$_POST[link]', rekruitmen_produk='$_POST[rekruitmen]', pelajari_produk='$_POST[pejalari]', id_tutor_fk='$id_tutor', nama_tutor_pembuat='$nama_pembuat', tanggal_pembuatan='$date', sub_judul_produk='$_POST[sub_judul]' WHERE id_produk='$_GET[id]'");
 		echo "<script>alert('( No Update Image ) Successfull Update Course in Database');</script>";
 		echo "<meta http-equiv='refresh' content='1'>";
 	}
 }
 ?>
-<!-- end update produk -->

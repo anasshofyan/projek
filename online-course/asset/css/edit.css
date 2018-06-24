@@ -73,13 +73,20 @@
 	border-radius: 0px;
 }
 .content-body-3{
-	padding: 10px;
+	padding: 1px;
 	font-size: 17px;
 	line-height: 25px;
-	color: #343434;
-	background-color: white;
+	color: #FFFFFF;
+	background-color: #2F2F2F;
+	border-radius: 2px;
+}
+.content-body-4{
+	padding: 40px;
+	background-color: #FFF;
 	border-radius: 0px;
-	
+	font-size: 16px;
+	line-height: 30px;
+	color: #343434;
 }
 /* END CONTENT BODY*/
 

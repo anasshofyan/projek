@@ -25,4 +25,4 @@
   </div>
 </div>
 </footer>
-c<!-- end Footer -->
+<!-- end Footer -->
