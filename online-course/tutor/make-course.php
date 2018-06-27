@@ -72,11 +72,11 @@
 					<div class="form-group">
 						<label for="title">What Will  Learn?</label>
 						<small style="font-size: 12px;" class="text-muted">*apa yang bisa dipelajari oleh murid, isikan dengan lengkap agar murid tertarik dengan materi anda</small>
-						<textarea  type="text" class="form-control"  required="" name="pelajari"></textarea>
+						<textarea  type="text" class="form-control"  required="" name="pelajari" placeholder="Insert"></textarea>
 					</div>
 					<div class="form-group">
 						<label for="title">Requirements</label>
-						<small style="font-size: 12px;" class="text-muted">*persyaratan bagi murid, isikan dengan lengkap agar murid tahu apa yang akan diperispkan untuk belajar dengan materi anda</small>
+						<small style="font-size: 12px;" class="text-muted">*persyaratan bagi murid, isikan dengan lengkap agar murid tahu apa yang akan dipersiapkan untuk belajar dengan materi anda</small>
 						<textarea type="text" name="rekruitmen" class="form-control" placeholder="Insert your Reqeuitment"  required=""></textarea>
 					</div>
 					<div class="form-group pt-3 mb-3">
@@ -86,10 +86,6 @@
 					</div>
 				</div>
 			</form>
-			<script>
-				CKEDITOR.replace( 'pelajari' );
-				CKEDITOR.replace( 'rekruitmen' );
-			</script>
 		</div>
 	</div>
 </div>
@@ -101,7 +97,7 @@
 <?php if (isset($_POST['save'])) {
 	$nama_pembuat = $tutor['nama_depan_tutor'] ;
 	$id_tutor = $_SESSION['tid'];
-	$date = date('Y-m-d');
+	date_default_timezone_set('Asia/Jakarta');	
 	$errors = $_FILES['image']['error'];
 	$file_name = $_FILES['image']['name'];
 	$file_size = $_FILES['image']['size'];
@@ -122,7 +118,7 @@
 					}else{
 						echo "<script>alert('Successfull upload Course in Database');</script>";
 						move_uploaded_file($file_tmp,"./uploads/".$file_name);
-						mysqli_query($conn, "INSERT INTO tabel_produk (nama_produk, deskripsi_produk, id_level, id_kategori, foto_produk, harga_produk, link_video_iframe, rekruitmen_produk, pelajari_produk, id_tutor_fk, nama_tutor_pembuat, tanggal_pembuatan, sub_judul_produk) VALUES('$_POST[nama]','$_POST[deskripsi]', '$_POST[level]', '$_POST[kategori]', '$file_name', '$_POST[harga]', '$_POST[link]', '$_POST[rekruitmen]', '$_POST[pelajari]', '$id_tutor', '$nama_pembuat', '$date', '$_POST[sub_judul]')");
+						mysqli_query($conn, "INSERT INTO tabel_produk (nama_produk, deskripsi_produk, id_level, id_kategori, foto_produk, harga_produk, link_video_iframe, rekruitmen_produk, pelajari_produk, id_tutor_fk, nama_tutor_pembuat, sub_judul_produk) VALUES('$_POST[nama]','$_POST[deskripsi]', '$_POST[level]', '$_POST[kategori]', '$file_name', '$_POST[harga]', '$_POST[link]', '$_POST[rekruitmen]', '$_POST[pelajari]', '$id_tutor', '$nama_pembuat', '$_POST[sub_judul]')");
 						echo "<meta http-equiv='refresh' content='1'>";
 					}
 				}else{

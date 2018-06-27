@@ -32,7 +32,7 @@
    </ul>
    <ul class="navbar-nav">
     <li class="nav-item mr-2">
-      <a class="nav-link" href="tutor/index.php?page=teach-tutor">Teach on Tutorteknik</a>
+      <a class="nav-link" href="tutor/index.php?page=teach-tutor" target="_blank">Teach on Tutorteknik</a>
     </li>
     <li class="nav-item mr-2">
      <a class="nav-link" href="index.php?page=my-course">Courses</a>

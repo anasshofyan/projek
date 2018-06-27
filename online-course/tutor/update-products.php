@@ -89,10 +89,6 @@
 					</div>
 				</div>
 			</form>
-			<script>
-				CKEDITOR.replace( 'pejalari' );
-				CKEDITOR.replace( 'rekruitmen' );
-			</script>
 		</div>
 	</div>
 </div>
@@ -107,7 +103,7 @@
 if (isset($_POST['update'])) {
 	$nama_pembuat = $tutor['nama_depan_tutor'] ;
 	$id_tutor = $_SESSION['tid'];
-	$date = date('Y-m-d');
+	date_default_timezone_set('Asia/Jakarta');	
 	$errors = $_FILES['image']['error'];
 	$file_name = $_FILES['image']['name'];
 	$file_size = $_FILES['image']['size'];
@@ -127,7 +123,7 @@ if (isset($_POST['update'])) {
 						echo "<script>alert('your image size should be 740x506 ');</script>";
 					}else{
 						move_uploaded_file($file_tmp,"./uploads/".$file_name);
-						$result = mysqli_query($conn, "UPDATE tabel_produk SET nama_produk='$_POST[nama]', deskripsi_produk='$_POST[deskripsi]', foto_produk='$file_name', level_produk='$_POST[level]', kategori_produk='$_POST[kategori]', harga_produk='$_POST[harga]', link_video_iframe='$_POST[link]', rekruitmen_produk='$_POST[rekruitmen]', pelajari_produk='$_POST[pejalari]', id_tutor_fk='$id_tutor', nama_tutor_pembuat='$nama_pembuat', tanggal_pembuatan='$date', sub_judul_produk='$_POST[sub_judul]' WHERE id_produk='$_GET[id]'");
+						$result = mysqli_query($conn, "UPDATE tabel_produk SET nama_produk='$_POST[nama]', deskripsi_produk='$_POST[deskripsi]', foto_produk='$file_name', level_produk='$_POST[level]', kategori_produk='$_POST[kategori]', tanggal_pembuatan, harga_produk='$_POST[harga]', link_video_iframe='$_POST[link]', rekruitmen_produk='$_POST[rekruitmen]', pelajari_produk='$_POST[pejalari]', id_tutor_fk='$id_tutor', nama_tutor_pembuat='$nama_pembuat', sub_judul_produk='$_POST[sub_judul]' WHERE id_produk='$_GET[id]'");
 						echo "<script>alert('( Update Image ) Successfull Update Course in Database');</script>";
 						echo "<meta http-equiv='refresh' content='1'>";
 					}
@@ -141,7 +137,7 @@ if (isset($_POST['update'])) {
 			echo "<script>alert('( Upload Image ) Image not empty);</script>";
 		}
 	}else{
-		$result = mysqli_query($conn, "UPDATE tabel_produk SET nama_produk='$_POST[nama]', deskripsi_produk='$_POST[deskripsi]',id_level='$_POST[level]', id_kategori='$_POST[kategori]', harga_produk='$_POST[harga]', link_video_iframe='$_POST[link]', rekruitmen_produk='$_POST[rekruitmen]', pelajari_produk='$_POST[pejalari]', id_tutor_fk='$id_tutor', nama_tutor_pembuat='$nama_pembuat', tanggal_pembuatan='$date', sub_judul_produk='$_POST[sub_judul]' WHERE id_produk='$_GET[id]'");
+		$result = mysqli_query($conn, "UPDATE tabel_produk SET nama_produk='$_POST[nama]', deskripsi_produk='$_POST[deskripsi]',id_level='$_POST[level]', id_kategori='$_POST[kategori]', harga_produk='$_POST[harga]', link_video_iframe='$_POST[link]', rekruitmen_produk='$_POST[rekruitmen]', pelajari_produk='$_POST[pejalari]', id_tutor_fk='$id_tutor', nama_tutor_pembuat='$nama_pembuat', sub_judul_produk='$_POST[sub_judul]' WHERE id_produk='$_GET[id]'");
 		echo "<script>alert('( No Update Image ) Successfull Update Course in Database');</script>";
 		echo "<meta http-equiv='refresh' content='1'>";
 	}

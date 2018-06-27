@@ -15,7 +15,7 @@
 				<p class="card-text text-center mb-3"> 
 					<?= $pecah['email_user'];  ?></p>
 				</div>
-			</div>
+			</div> 
 			<!-- form profile -->
 			<div class="col-md-8">
 				<div class="card">

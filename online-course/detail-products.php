@@ -1,6 +1,5 @@
 <?php include 'process/session.php'; ?>
 <?php $detail = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM tabel_produk WHERE id_produk='$_GET[id]'"));?>
-
 <!-- details products -->
 <section>
 	<div class="container-fluid content-body-2">
@@ -35,8 +34,8 @@
 									<a href="index.php?page=add-to-card&id=<?=$detail['id_produk']; ?>">
 									<button class=" btn btn-danger btn-block  btn-md mb-3">Add to Card</button></a>
 
-									<a href="index.php?page=check-out&id=<?= $id_user = $_SESSION['uid']; ?>">
-									<button class=" btn btn-outline-warning btn-block btn-md">Buy Now</button></a>
+									<!-- <a href="index.php?page=check-out&id=<?= $id_user = $_SESSION['uid']; ?>"> -->
+								<!-- 	<button class=" btn btn-outline-warning btn-block btn-md">Buy Now</button></a> -->
 								</div>
 								<hr>
 								<div class="text-center">
@@ -164,7 +163,7 @@
 								<p><i class="fa fa-star mr-1"></i> 4.5 Average Rating</p>
 								<p><i class="fa fa-comment mr-1"></i> 1,206 Reviews</p>
 								<p><i class="fa fa-user-circle mr-1"></i> 12,229 Students</p>
-								<p><i class="fa fa-play-circle mr-1"></i> <?= $detailss;  ?> Courses</p>
+								<p><i class="fa fa-play-circle mr-1"></i> <?= $detailss ?> Courses</p>
 							</div>
 						</div>
 						<div class="col-md-8">

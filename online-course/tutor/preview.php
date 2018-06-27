@@ -33,7 +33,7 @@
 								<h3 style="color: black;">Rp. <small style="font-size: 30px;"><?= number_format($detail['harga_produk']); ?></small></h3>
 								<div class="mt-3">
 									<button class=" btn btn-danger btn-block  btn-md">Add to Card</button>
-									<button class=" btn btn-outline-warning btn-block btn-md">Buy Now</button>
+									<!-- <button class=" btn btn-outline-warning btn-block btn-md">Buy Now</button> -->
 								</div>
 								<hr>
 								<div class="text-center">

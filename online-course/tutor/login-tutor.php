@@ -42,7 +42,6 @@
 				</div>
 				</div>
 				</div>";
-				echo "<meta http-equiv='refresh' content='1'>";
 			}
 		}
 		?>
@@ -71,7 +70,7 @@
 				<a href=""><span class="fa fa-google fa-3x pr-3 ico-color" ></span></a>
 				<a href=""><span class="fa fa-facebook fa-3x ico-color"></span></a>
 				<p class="mt-3" style="font-size: 14px;">Forgot password? <a href="forgot-password.php" class="ico-color"> click here to reset </a></p>
-				<p class="mt-0" style="font-size: 14px;">New User? <a href="index.php?page=register-user" class="ico-color"> click here to register </a> </p>
+				<p class="mt-0" style="font-size: 14px;">New User? <a href="index.php?page=register-tutor" class="ico-color"> click here to register </a> </p>
 			</div>
 		</div>
 		<!-- end link -->

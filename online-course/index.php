@@ -26,7 +26,7 @@ if(!isset($_SESSION['login_user']) || !$_SESSION['login_user']){
 <body class="bg-light">
 	
 	<div style="margin-top: 58px;"></div>
-	
+
 	<!-- link -->
 	<?php if (isset($_GET['page'])) {
 		// produk
@@ -56,24 +56,33 @@ if(!isset($_SESSION['login_user']) || !$_SESSION['login_user']){
 			include 'contact-us.php';
 		}elseif ($_GET['page']=="about") {
 			include 'about.php';
-		}elseif ($_GET['page']=="beginner") {
-			include 'beginner.php';
-		}elseif ($_GET['page']=="intermediate") {
-			include 'intermediate.php';
-		}elseif ($_GET['page']=="add-to-card") {
-			include 'add-to-card.php';
-		}elseif ($_GET['page']=="advance") {
-			include 'advance.php';
+		}elseif ($_GET['page']=="development") {
+			include 'category/development.php';
+		}elseif ($_GET['page']=="design") {
+			include 'category/design.php';
+		}elseif ($_GET['page']=="it") {
+			include 'category/it.php';
+		}elseif ($_GET['page']=="electro") {
+			include 'category/electro.php';
 		}elseif ($_GET['page']=="check-out") {
 			include 'check-out.php';
 		}elseif ($_GET['page']=="checkout-nota") {
 			include 'checkout-nota.php';
 		}elseif ($_GET['page']=="support") {
 			include 'support.php';
+		}elseif ($_GET['page']=="add-to-card") {
+			include 'add-to-card.php';
+		}elseif ($_GET['page']=="details-nota") {
+			include 'details-nota.php';
+		}elseif ($_GET['page']=="print") {
+			include 'print.php';
 		}else{
 			include 'home.php';
 		}
-	} ?>
+	}else{
+		include 'home.php';
+	}	?>
+	}
 
 	<!-- end link -->
 	<div class="margin-bottom"></div>

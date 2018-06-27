@@ -115,7 +115,7 @@
 				<a href=""><span class="fa fa-google fa-3x pr-3 ico-color" ></span></a>
 				<a href=""><span class="fa fa-facebook fa-3x ico-color"></span></a>
 				<p class="mt-3" style="font-size: 14px;">Forgot password? <a href="forgot-password.php" class="ico-color"> click here to reset </a></p>
-				<p class="mt-0" style="font-size: 14px;">Have an Account? <a href="login-user.php" class="ico-color"> Click here to login </a> </p>
+				<p class="mt-0" style="font-size: 14px;">Have an Account? <a href="index.php?page=login-tutor" class="ico-color"> Click here to login </a> </p>
 			</div>
 		</div>
 		<!-- end link -->

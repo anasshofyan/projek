@@ -31,20 +31,14 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav mr-auto">
      <li class="nav-item dropdown">
-       <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <span class="fa fa-th" style="color: #B2B2B2"></span> Level 
-       </a>
-       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-         <li><a class="dropdown-item" href="index.php?page=products">All Level</a></li>
-         <li><a class="dropdown-item" href="index.php?page=beginner">Beginner</a></li>
-         <li><a class="dropdown-item" href="index.php?page=intermediate">Intermediate</a></li>
-         <li><a class="dropdown-item" href="index.php?page=advance">Advance</a></li>
-       </ul>
+       <a class="nav-link" href="products.php" >
+         <span class="fa fa-th" style="color: #B2B2B2"></span> All Course 
+       </a> 
      </li>
    </ul>
    <ul class="navbar-nav">
     <li class="nav-item mr-2">
-      <a class="nav-link" href="tutor/index.php?page=teach-tutor">Teach on Tutorteknik</a>
+      <a class="nav-link" href="tutor/index.php?page=teach-tutor" target="_blank">Teach on Tutorteknik</a>
     </li>
     <li class="nav-item mr-2">
      <a class="nav-link" href="index.php?page=checkout-nota">Transaction</a>
